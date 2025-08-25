@@ -4,8 +4,8 @@ var allProducts = [
         name: 'App python tổng hợp',
         price: 0,
         images_gallery: ['images/py.jpg', 'images/placeholder.png', 'images/placeholder.png'],
-        category: 'Source Code',
-        subCategory: 'Python', // Mục con mới
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
         description: 'Chức năng: (1) spam chỉ chuột vào đích  (2) spam dạng ctrl+v  (3) tạo list mail ',
     },
     {
@@ -13,8 +13,8 @@ var allProducts = [
         name: 'Sourcode web bán hàng(php)',
         price: 0,
         images_gallery: ['images/py.jpg', 'images/placeholder.png', 'images/placeholder.png'],
-        category: 'Source Code',
-        subCategory: 'html/css/js...', // Mục con mới
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
         resourceLink: 'https://drive.google.com/file/d/1bjGwV6-9t8tHG64jWE_ddd3X_xvurkiW/view?fbclid=IwY2xjawMKzSVleHRuA2FlbQIxMABicmlkETEwbHFWSHpyRVloVXVHSXNTAR7MIoPcrzvNch_DPzf6LYmIbMl7B-EUmlO6J6KVv1QW-2FmZGlW8g0VSO86Dg_aem_qFU4bP_1FQBxSy28zYCy_w',
         description: '',
     },
@@ -23,47 +23,45 @@ var allProducts = [
         name: 'Source Code TDS TIKTOK',
         price: 0,
         images_gallery: ['images/flappybird_code.jpg'],
-        category: 'Source Code',
-        subCategory: 'Python', // Mục con mới
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
         description: '',
         resourceLink: 'https://drive.google.com/drive/u/0/folders/1-bHlCbRAO1XG_6c6vS4MQ6z60yi8IyNF',
     },
-      {
+    {
         id: 4,
         name: 'Source Code TDS fb',
         price: 0,
-        images_gallery: ['images/flappybird_code.jpg'],
-        category: 'Source Code',
-        subCategory: 'Python', // Mục con mới
-        description: '',
+        images_gallery: ['images/locket.jpg'],
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
         resourceLink: 'https://drive.google.com/drive/u/0/folders/1-bHlCbRAO1XG_6c6vS4MQ6z60yi8IyNF',
     },
     {
         id: 5,
         name: 'app c++',
         price: 0,
-        images_gallery: ['images/flappybird_code.jpg'],
-        category: 'Source Code',
-        subCategory: 'C/C++', // Mục con mới
-        description: 'đa tính năng dạng cơ bản',
+        images_gallery: ['images/locket.jpg'],
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
     },
     {
         id: 6,
-        name: 'Locket Gold Link 1',
+        name: 'Locket Gold config 1',
         price: 0,
         images_gallery: ['images/locket.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/hvbstar/coderhvb/main/Locket_Gold_HVB.sgmodule'
     },
     {
         id: 7,
-        name: 'Locket Gold Link 2',
+        name: 'Locket Gold config 2',
         price: 0,
         images_gallery: ['images/locket.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule'
     },
@@ -73,7 +71,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/shadow.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'App & ipa', // Mục con mới
+        subCategory: 'Mod(app,module...)', // Mục con mới
         description: '',
         resourceLink: 'https://idapple.csadata4g.me/'
     },
@@ -83,7 +81,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/yt.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/quocchienn/YouTubePIP/refs/heads/YouTube%2B%2B/YouTubefix3.conf'
     },
@@ -93,7 +91,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/yt.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule'
     },
@@ -103,7 +101,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/spotify.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/quocchienn/1in1/refs/heads/main/Spotify.conf'
     },
@@ -113,7 +111,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/spotify.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/quocchienn/1in1/refs/heads/main/Spotify.module'
     },
@@ -123,7 +121,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'App & ipa', // Mục con mới
+        subCategory: 'Mod(app,module...)', // Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/vantuan380/vantuan/refs/heads/main/soundcloud.module'
     },
@@ -133,7 +131,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/shadow.jpg'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/quocchienn/Make/refs/heads/crack/ALL_Lucky_VP3.modules'
     },
@@ -143,7 +141,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/vantuan380/vantuan/refs/heads/main/Meitu.module'
     },
@@ -153,7 +151,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: 'cre: whatshub',
         resourceLink: 'https://whatshub.top/module/lightroom.module'
     },
@@ -163,7 +161,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Module & Script', // Mục con mới
+        subCategory: 'Mod(app,module...)',// Mục con mới
         description: '',
         resourceLink: 'https://raw.githubusercontent.com/vantuan380/phonton/refs/heads/main/lightroom.module'
     },
@@ -244,7 +242,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'App & ipa', // Mục con mới
+        subCategory: 'Mod(app,module...)',
         description: '',
         resourceLink: 'https://ios.codevn.net/'
     },
@@ -254,7 +252,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Sourcode',
+        subCategory: 'Lập trình',
         resourceLink: 'https://uiverse.io/buttons',
         description: '',
     },
@@ -264,7 +262,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'Sourcode',
+        subCategory: 'Lập trình',
         description: '',
         resourceLink: 'https://fontawesome.com/icons?o=r'
     },
@@ -278,7 +276,7 @@ var allProducts = [
         description: '',
         resourceLink: 'https://drive.google.com/drive/u/0/folders/1XxvRMSDA-KgfRL8oC-vLkbUpM8Tdcq3o'
     },
-     {
+    {
         id: 30,
         name: 'Tổng hợp python,c,php,java,...',
         price: 0,
@@ -288,13 +286,13 @@ var allProducts = [
         description: '',
         resourceLink: 'https://github.com/orgs/TheAlgorithms/repositories?q=sort%3Astars&utm_source=j2team&utm_medium=url_shortener&utm_campaign=The-Algorithms'
     },
-        {
+    {
         id: 31,
         name: 'kho phần mềm',
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'App & ipa', // Mục con mới
+        subCategory: 'Mod(app,module...)', // Mục con mới
         description: '',
         resourceLink: 'https://www.hoanghaopc.com/trang-ch%E1%BB%A7'
     },
@@ -304,7 +302,7 @@ var allProducts = [
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'PHOTOSHOP & VIDEO', // Mục con mới
+        subCategory: 'Photoshop & video', // Mục con mới
         description: '',
         resourceLink: 'https://drive.google.com/drive/folders/1ZaS5kstFSNlxms07pQHL7d8q5ENY5W-G'
     },
@@ -338,7 +336,7 @@ var allProducts = [
         description: '',
         resourceLink: 'https://github.com/lydiahallie/javascript-questions/blob/master/vi-VI/README-vi.md?fbclid=IwY2xjawMXiZ5leHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR43ecPpe7NEEKGa-hpapFJeNnBsNRrKFms35NTx87rJlcw9APWIwad9XFrkqg_aem_X6xueb_8bw_j7OLguSZtZA'
     },
-         {
+    {
         id: 36,
         name: 'kho code thuật toán',
         price: 0,
@@ -348,26 +346,67 @@ var allProducts = [
         description: '',
         resourceLink: 'https://github.com/MAZHARMIK/Interview_DS_Algo?fbclid=IwY2xjawMXiiFleHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR7nufqhYr2PkFKl0XguRztCOJYDdGstgYvzCiUcm_ZSRAIy38WVpXlix7BLAg_aem_4nAlqQmR77lKAF6eDCsTjw'
     },
-        {
+    {
         id: 37,
         name: 'Mod locket gold ipa',
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'App & ipa', // Mục con mới
+        subCategory: 'Mod(app,module...)', // Mục con mới
         description: 'làm theo video',
         resourceLink: 'https://www.tiktok.com/@hyper_astear.17/video/7541007421255257352'
     },
-         {
+    {
         id: 38,
         name: 'Mod capcut ipa',
         price: 0,
         images_gallery: ['images/'],
         category: 'Share Tài Nguyên',
-        subCategory: 'App & ipa', // Mục con mới
+        subCategory: 'Mod(app,module...)', // Mục con mới
         description: 'làm theo video mod locket gold ipa để tải ksign và nhập ipa capcut vô ksign để dùng capcut',
         resourceLink: 'https://ipaomtk.com/capcut-ipa/'
     },
+    {
+        id: 39,
+        name: 'module locket gold 1',
+        price: 0,
+        images_gallery: ['images/'],
+        category: 'Share Tài Nguyên',
+        subCategory: 'Mod(app,module...)',// Mục con mới
+        description: '',
+        resourceLink: 'https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/Locket-V4.module'
+    },
+    {
+        id: 40,
+        name: 'Tool full tính năng cho IT',
+        price: 0,
+        images_gallery: ['images/'],
+        category: 'Share Tài Nguyên',
+        subCategory: 'Công cụ', // Mục con mới
+        description: 'tổng hợp nhiều tính năng đỉnh cho người thích mày mò,IT,sáng tạo.',
+        resourceLink: 'https://it-tools.tech/'
+    },
+    {
+        id: 41,
+        name: 'sourcode tool full tính năng IT',
+        price: 0,
+        images_gallery: ['images/'],
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
+        description: '',
+        resourceLink: 'https://github.com/CorentinTh/it-tools/tree/main'
+    },
+    {
+        id: 42,
+        name: 'Nhóm share sourcode đa ngôn ngữ',
+        price: 0,
+        images_gallery: ['images/'],
+        category: 'Share Tài Nguyên',
+        subCategory: 'Lập trình',
+        description: '',
+        resourceLink: 'https://www.messenger.com/channel/codetoanbug'
+    },
+
 ];
 
 const placeholderImage = 'images/placeholder.png';
