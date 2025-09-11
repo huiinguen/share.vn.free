@@ -4,28 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mảng chứa các dòng văn bản bạn muốn gõ
 const textLines = [
-        "// Đang khởi động hệ thống...",
-        "// Chào mừng bạn đến với ChiaSe.VN",
-        "const platform = {",
-        "  name: 'ChiaSẻ.VN',",
-        "  purpose: 'Kết nối và chia sẻ tri thức',",
-        "  slogan: 'Nơi tri thức hội tụ và lan tỏa.'",
-        "};",
-        "", // Dòng trống để dễ đọc hơn
-        "console.log('Chào mừng bạn đến với thế giới của những ý tưởng và tài nguyên.');",
-        "console.log('Tại đây, chúng tôi mang đến cho bạn:');",
-        "console.log('- Source code, template web đa dạng.');",
-        "console.log('- Tài liệu học tập và chia sẻ kiến thức.');",
-        "console.log('- Các sản phẩm thanh lý hữu ích.');",
-        "",
-        "// Hãy bắt đầu hành trình khám phá ngay bây giờ!",
-        "// Gõ 'go()' để vào trang chính...",
-        "",
-        "function go() {",
-        "  window.location.href = 'sanpham.html';",
-        "}",
-        "// Khám phá và đóng góp ngay hôm nay!"
-    ];
+  "✨ Chào mừng bạn đến với ChiaSe.VN ✨",
+  "",
+  "Tại đây, chúng tôi mong muốn mang đến cho bạn một không gian nơi tri thức được kết nối và lan tỏa.",
+  "",
+  "Khi ghé thăm ChiaSe.VN, bạn sẽ tìm thấy:",
+  "- 🌐 Các source code và template website đa dạng.",
+  "- 📚 Tài liệu học tập, kiến thức hữu ích được chia sẻ từ cộng đồng.",
+  "- 🛒 Những sản phẩm thanh lý chất lượng, giá trị cho học tập và công việc.",
+  "",
+  "🚀 Hãy bắt đầu hành trình khám phá ngay hôm nay cùng chúng tôi.",
+  "👉 Nhấn 'Vào trang chính' để bắt đầu trải nghiệm!"
+];
+
     
     let lineIndex = 0;
     let charIndex = 0;

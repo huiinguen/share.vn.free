@@ -52,7 +52,7 @@ const currentPath = window.location.pathname.split("/").pop();
 
 navLinks.forEach(link => {
     const linkPath = link.getAttribute('href').split("/").pop();
-    // Bổ sung điều kiện cho trang note.html
+    // Thêm điều kiện cho trang 'sukien.html'
     if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
         link.classList.add('active');
     }

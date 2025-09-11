@@ -238,3 +238,39 @@
         font-size: 0.9em;
     }
 }
+/* Styling cho phần đánh giá */
+.rating-action {
+    display: flex;
+    justify-content: flex-start; /* Thay đổi giá trị này */
+    margin-top: 20px;
+}
+/* Styling cho nút Khảo sát */
+.survey-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #50b3a2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.survey-button:hover {
+    background-color: #339989;
+    transform: translateY(-2px);
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .rating-action {
+        margin-top: 15px;
+    }
+
+    .survey-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}

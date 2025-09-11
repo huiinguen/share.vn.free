@@ -24,7 +24,7 @@
 
 .main-image-container {
     width: 100%;
-    max-width: 450px; /* Giới hạn kích thước ảnh chính */
+    max-width: 600px; /* Giới hạn kích thước ảnh chính */
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden;
@@ -228,4 +228,114 @@
         padding: 8px 12px;
         font-size: 0.8em;
     }
+}
+/* Container cho các thông tin chi tiết mới */
+.product-info-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.product-info-box h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #50b3a2;
+    padding-bottom: 10px;
+}
+
+.info-group {
+    margin-bottom: 15px;
+}
+
+.info-group p {
+    margin: 0;
+}
+
+.info-group strong {
+    color: #50b3a2;
+}
+
+/* Cập nhật style nút CTA để thêm icon */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #50b3a2;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #3e8e7b;
+    transform: translateY(-2px);
+}
+
+.cta-button i {
+    margin-right: 8px;
+}
+/* Style cho khu vực chia sẻ mạng xã hội */
+.social-share-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.social-share-section h4 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.social-share-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.share-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.share-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.share-button.messenger {
+    background-color: #0078FF;
+}
+
+.share-button.zalo {
+    background-color: #0081FF;
+}
+
+.share-button.telegram {
+    background-color: #26A5E4;
+}
+
+.share-button.tiktok {
+    background-color: #000;
+}
+
+.zalo-icon {
+    width: 24px;
+    height: 24px;
 }
