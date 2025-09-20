@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Sản Phẩm</title>
+    <title>Blog - CodeFlow</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sanpham_chitiet.css">
+    <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <nav class="dock-nav" id="dockNav">
@@ -32,19 +32,36 @@
     </a>
 </nav>
 <body>
-    <header>
-    <a href="sanpham.html" class="back-to-list-btn fixed-back-btn"><i class="fas fa-arrow-left"></i> Quay lại</a>
     <main>
-        <div class="container">
-            <div id="productDetailContainer" class="product-detail">
-                <p class="loading-text">Đang tải thông tin sản phẩm...</p>
+        <div class="container page-layout">
+            <button class="filter-toggle-btn mobile-only" id="filterToggle"><i class="fas fa-filter"></i> Bộ
+                lọc</button>
+
+            <div class="sidebar-filters" id="sidebarFilters">
+                <button class="close-filter-btn mobile-only" id="closeFilterBtn"><i class="fas fa-times"></i></button>
+                <aside class="filters blog-sidebar">
+                    <h3>Danh mục</h3>
+                    <ul id="blogCategories">
+                    </ul>
+                </aside>
+            </div>
+
+            <section class="blog-posts">
+                <div class="toolbar">
+                    <input type="search" id="blogSearchInput" placeholder="Tìm kiếm bài viết...">
                 </div>
+                <div class="post-grid" id="blogPostGrid">
+                </div>
+                <div class="pagination" id="blogPagination">
+                </div>
+            </section>
         </div>
+        <div class="overlay" id="sidebarOverlay"></div>
     </main>
 
-    <script src="js/product_data.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/sanpham_chitiet.js"></script>
+    <script src="js/blog_data.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 
 </html>

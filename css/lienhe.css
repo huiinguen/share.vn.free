@@ -1,276 +1,177 @@
 /* ===================================== */
-/* Trang Liên Hệ - Giao diện Profile Ngang */
+/* Trang Liên Hệ - Giao diện mới */
 /* ===================================== */
 
-.profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contact-page-layout {
     padding: 40px 0;
 }
 
-.profile-card {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #50b3a2;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section,
+.ecosystem-section {
     background-color: #fff;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    gap: 40px;
-    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.profile-left {
+/* Bố cục lưới cho các mục liên hệ */
+.contact-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.contact-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
-    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #50b3a2;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #f0f0f0;
-    margin-bottom: 25px;
-    transition: transform 0.3s ease;
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.profile-avatar:hover {
-    transform: scale(1.05);
-}
-
-.profile-social {
-    display: flex;
-    justify-content: center;
-}
-
-.profile-social a {
+.contact-item .contact-icon {
+    font-size: 2.5em;
     color: #50b3a2;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
 }
 
-.profile-social a:hover {
-    color: #339989;
-    transform: translateY(-3px);
-}
-
-.profile-right {
+.contact-item .contact-details {
     flex-grow: 1;
-    text-align: left;
 }
 
-.profile-header {
-    margin-bottom: 25px;
-}
-
-.profile-card h2 {
-    font-size: 1.8em;
+.contact-item h3 {
+    font-size: 1.2em;
     color: #333;
     margin-bottom: 5px;
 }
 
-.profile-bio {
-    font-size: 1em;
+.contact-item p {
+    font-size: 0.9em;
     color: #777;
     margin: 0;
 }
 
-.profile-info-section {
-    margin-bottom: 25px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-}
-
-.profile-info-section:first-of-type {
-    border-top: none;
-    padding-top: 0;
-}
-
-.profile-info-section h3 {
-    font-size: 1.2em;
-    color: #50b3a2;
-    margin-bottom: 15px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.info-item i {
-    color: #50b3a2;
-    margin-right: 15px;
-    font-size: 1.1em;
-    width: 20px;
-}
-
-.info-item p {
-    margin: 0;
-    color: #555;
-}
-
-.info-item span {
-    font-weight: bold;
-    color: #333;
-}
-
-.link-to-copy {
-    cursor: pointer;
-    font-style: italic;
-    color: #007bff;
-    text-decoration: underline;
-}
-
-.profile-note {
-    font-style: italic;
-    color: #888;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-
-/* -------------------------------------- */
-/* Zalo Phone Number Functionality Styles */
-/* -------------------------------------- */
-.zalo-contact {
+.contact-item .copyable-text {
     cursor: pointer;
     font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
+    color: #50b3a2;
 }
 
-.zalo-contact i.fas {
-    font-size: 1.1em;
-    color: #008cff; /* Zalo blue */
-    margin-right: 15px;
+.contact-item .copy-note {
+    font-size: 0.75em;
+    color: #aaa;
+    margin-top: 5px;
 }
 
-.zalo-contact .shake-animation {
-    margin-left: 10px;
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-/* Keyframe for the subtle shake animation */
-@keyframes shake {
-  10%, 90% { transform: translate3d(-1px, 0, 0); }
-  20%, 80% { transform: translate3d(2px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-  40%, 60% { transform: translate3d(4px, 0, 0); }
-}
-
-/* Message Box for "Copied" */
-.copy-message {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(80, 179, 162, 0.95);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    font-size: 1em;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.copy-message.show {
-    opacity: 1;
-    visibility: visible;
-}
-/* ===================================== */
-/* Responsive cho Màn Hình Nhỏ */
-/* ===================================== */
-@media (max-width: 768px) {
-    .profile-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .profile-left {
-        align-items: center;
-    }
-
-    .profile-right {
-        text-align: center;
-    }
-
-    .profile-info-section {
-        border-top: 1px solid #eee;
-        padding-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .profile-info-section:first-of-type {
-        border-top: none;
-        padding-top: 0;
-    }
-
-    .info-item {
-        justify-content: center;
-    }
-
-    .info-item i {
-        margin-right: 10px;
-    }
-
-    .profile-card h2 {
-        font-size: 1.5em;
-    }
-
-    .profile-bio {
-        font-size: 0.9em;
-    }
-}
-/* Styling cho phần đánh giá */
-.rating-action {
-    display: flex;
-    justify-content: flex-start; /* Thay đổi giá trị này */
-    margin-top: 20px;
-}
-/* Styling cho nút Khảo sát */
-.survey-button {
+.contact-item .contact-link {
     display: inline-block;
-    padding: 12px 25px;
-    background-color: #50b3a2;
-    color: #fff;
+    color: #50b3a2;
     text-decoration: none;
-    border-radius: 8px;
     font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    margin-top: 5px;
 }
 
-.survey-button:hover {
-    background-color: #339989;
-    transform: translateY(-2px);
+/* Bố cục lưới cho hệ sinh thái */
+.ecosystem-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Responsive cho màn hình nhỏ */
-@media (max-width: 768px) {
-    .rating-action {
-        margin-top: 15px;
-    }
+.ecosystem-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #50b3a2;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .survey-button {
-        padding: 10px 20px;
-        font-size: 0.95em;
-    }
+.ecosystem-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon chung cho hệ sinh thái */
+.ecosystem-item .ecosystem-icon {
+    font-size: 2.5em;
+    color: #50b3a2;
+    flex-shrink: 0;
+}
+
+.ecosystem-item .ecosystem-details {
+    flex-grow: 1;
+}
+
+.ecosystem-item h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.ecosystem-item p {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}
+
+.ecosystem-item .ecosystem-link {
+    display: inline-block;
+    color: #50b3a2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Kiểu dáng cho đường phân cách */
+.separator-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+    font-weight: bold;
+    color: #aaa;
+}
+
+.separator-container::before,
+.separator-container::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.separator-text {
+    padding: 0 15px;
+    font-size: 0.9em;
+    color: #555;
+    text-transform: uppercase;
 }

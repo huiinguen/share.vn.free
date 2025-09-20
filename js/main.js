@@ -1,10 +1,10 @@
-// js/main.js
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Trang web đã tải xong!");
 
-    // Xử lý active link trên navbar
-    const navLinks = document.querySelectorAll('.nav-links a');
+    // ===============================================
+    // PHẦN CẬP NHẬT: Xử lý active link trên cả 2 navbar
+    // ===============================================
+    const navLinks = document.querySelectorAll('.nav-links a, .dock-nav a'); // Chọn link ở cả 2 nơi
     const currentPath = window.location.pathname.split("/").pop();
 
     navLinks.forEach(link => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Logic cho Hamburger Menu
+    // Logic cho Hamburger Menu (giữ nguyên)
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const mainNavLinks = document.querySelector('.navbar .nav-links'); 
 
@@ -42,22 +42,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 hamburgerMenu.classList.remove('open');
             });
         });
-    } else {
-        console.warn("Hamburger menu or main navigation links not found. Mobile menu functionality might be impaired.");
     }
-});
-// Xử lý active link trên navbar
-const navLinks = document.querySelectorAll('.nav-links a');
-const currentPath = window.location.pathname.split("/").pop();
 
-navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href').split("/").pop();
-    // Thêm điều kiện cho trang 'sukien.html'
-    if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
-        link.classList.add('active');
+    // =============================================================
+    // PHẦN MỚI: Logic hiệu ứng phóng to cho thanh Dock
+    // =============================================================
+    // Logic cho hiệu ứng Dock (Macbook)
+    const dock = document.getElementById('dockNav');
+    if (dock) {
+        // Thêm điều kiện để chỉ kích hoạt hiệu ứng trên màn hình lớn
+        if (window.innerWidth > 768) {
+            const dockIcons = dock.querySelectorAll('a');
+            const maxScale = 0; // Độ phóng to tối đa
+            const effectRadius = 0; // Bán kính ảnh hưởng của hiệu ứng
+
+        dock.addEventListener('mousemove', function(e) {
+            const dockRect = dock.getBoundingClientRect();
+            const mouseX = e.clientX - dockRect.left;
+
+            dockIcons.forEach(icon => {
+                const iconRect = icon.getBoundingClientRect();
+                const iconCenterX = (iconRect.left - dockRect.left) + (iconRect.width / 2);
+                
+                const distance = Math.abs(mouseX - iconCenterX);
+                
+                let scale = 1;
+                if (distance < effectRadius) {
+                    const scaleFactor = (1 - distance / effectRadius);
+                    scale = 1 + (maxScale - 1) * Math.cos(scaleFactor * (Math.PI / 2));
+                }
+                
+                icon.style.transform = `scale(${scale.toFixed(2)}) translateY(${(1-scale)*20}px)`;
+            });
+        });
+
+        // Reset lại kích thước khi chuột rời khỏi thanh Dock
+        dock.addEventListener('mouseleave', function() {
+            dockIcons.forEach(icon => {
+                icon.style.transform = 'scale(1) translateY(0px)';
+            });
+        });
     }
+}
 });
-// Hàm formatCurrency đã có
+
+// Hàm format tiền tệ
 function formatCurrency(amount) {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 }

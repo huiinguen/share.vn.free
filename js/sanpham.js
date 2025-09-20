@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsPerPage = 8;
     let currentPage = 1;
     let currentFilters = {
-        category: null,
+        category: 'all', // Thay đổi mặc định thành 'all'
         subCategory: null,
         searchTerm: '',
         sortBy: 'newest'
@@ -27,6 +27,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return;
     }
+    function createCategoryMenu() {
+    if (!categoryFilterContainer) return;
+    const categories = [...new Set(allProducts.map(p => p.category))];
+    let html = `
+        <li class="category-item all-products-item">
+            <label>
+                <input type="radio" name="category" value="all">
+                Tất cả sản phẩm
+            </label>
+        </li>
+    `;
+    categories.forEach(category => {
+        html += `<li class="category-item" data-category="${category}">
+                    <div class="category-title">
+                        <label>
+                            <input type="radio" name="category" value="${category}">
+                            ${category}
+                        </label>
+                        <i class="fas fa-chevron-right toggle-icon"></i>
+                    </div>
+                    <ul class="subcategory-list">
+                    </ul>
+                </li>`;
+    });
+    categoryFilterContainer.innerHTML = html;
+}
 
     // --- Bổ sung: Hàm cập nhật URL ---
     function updateUrl() {
@@ -73,18 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayProducts(products, page) {
         if (!allProductGrid) return;
-        
-        const hasFilters = currentFilters.category || currentFilters.subCategory || currentFilters.searchTerm;
-        if (!hasFilters) {
-            allProductGrid.innerHTML = '<p class="loading-text">Hãy tìm sản phẩm tùy thích!</p>';
-            paginationControls.innerHTML = '';
-            return;
-        }
 
-        allProductGrid.innerHTML = '';
-        const start = (page - 1) * productsPerPage;
-        const end = start + productsPerPage;
-        const productsToDisplay = products.slice(start, end);
+         allProductGrid.innerHTML = '';
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const productsToDisplay = products.slice(start, end);
 
         if (productsToDisplay.length === 0) {
             allProductGrid.innerHTML = '<p class="loading-text">Không tìm thấy sản phẩm nào phù hợp.</p>';
@@ -172,10 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterAndSortProducts() {
         let results = [...allProducts];
 
-        if (currentFilters.category) {
+        if (currentFilters.category && currentFilters.category !== 'all') {
             results = results.filter(p => p.category === currentFilters.category);
         }
-
         if (currentFilters.subCategory) {
             results = results.filter(p => p.subCategory === currentFilters.subCategory);
         }

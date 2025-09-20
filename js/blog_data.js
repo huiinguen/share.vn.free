@@ -1,0 +1,207 @@
+const blogPosts = [
+    {
+        id: 5,
+        title: "Trải nghiệm săn mây Hòa Bắc, Đà Nẵng",
+        summary: "Hướng dẫn chi tiết để săn mây tại Hòa Bắc, Đà Nẵng, với cảnh sắc ngoạn mục và mẹo chuẩn bị cho chuyến đi.",
+        image: "images/6.jpg",
+        date: "10/09/2025",
+        category: "Du lịch",
+        content: `
+            <h2>Giới thiệu về săn mây Hòa Bắc</h2>
+            <p>Hòa Bắc, một xã thuộc huyện Hòa Vang, Đà Nẵng, là điểm đến lý tưởng để săn mây với những ngọn đồi thấp phủ sương mù, tạo nên khung cảnh như chốn bồng lai. Chỉ cách trung tâm Đà Nẵng khoảng 30km, nơi đây thu hút phượt thủ và dân yêu thiên nhiên với vẻ đẹp hoang sơ và không khí trong lành.</p>
+
+            <h2>1. Hành trình đến Hòa Bắc</h2>
+            <p>Lộ trình: Từ trung tâm Đà Nẵng, đi theo QL14B hướng về Hòa Vang, qua cầu vượt Ngã Ba Huế, rẽ vào đường DT602. Tổng quãng đường khoảng 45 phút bằng xe máy. Đường dễ đi, nhưng có vài đoạn dốc, nên kiểm tra xe trước khi khởi hành.</p>
+            <p><strong>Mẹo:</strong> Khởi hành lúc 4h sáng để đón bình minh và biển mây dày đặc. nhiệt độ sáng sớm có thể xuống dưới 23°C.</p>
+
+            <h2>2. Điểm săn mây nổi bật</h2>
+            <ul>
+                <li><strong>Đồi Đa Phú</strong>: Điểm cao nhất ở Hòa Bắc, dễ tiếp cận bằng xe máy. Từ đây, bạn có thể ngắm toàn cảnh biển mây bồng bềnh ôm lấy các ngọn đồi.</li>
+                <li><strong>Đồi Vàng</strong>: Nổi tiếng với đồng cỏ vàng rực vào mùa khô, kết hợp mây trắng tạo khung cảnh như tranh. Phù hợp chụp ảnh "sống ảo".</li>
+                <li><strong>Suối Đá Hòa Bắc</strong>: Nếu muốn kết hợp săn mây và cắm trại, khu vực suối này có không gian rộng, thoáng, với mây trôi lững lờ vào sáng sớm.</li>
+            </ul>
+
+            <h2>3. Chuẩn bị cho chuyến săn mây</h2>
+            <ul>
+                <li><strong>Trang bị cá nhân</strong>: Giày chống trượt, áo mưa, đèn pin, sạc dự phòng (10.000 mAh trở lên) và cáp USB đa năng.</li>
+                <li><strong>Đồ cắm trại (nếu qua đêm)</strong>: Lều nhỏ gọn, túi ngủ chịu lạnh, bếp cồn và thực phẩm khô (lương khô, mì gói).</li>
+                <li><strong>An toàn</strong>:Luôn đi cùng nhóm 2-3 người và chia sẻ lộ trình với người thân.</li>
+            </ul>
+            <p><strong>Chi phí ước tính</strong>: 300.000-500.000 VNĐ/người (xăng, ăn uống, thuê lều). Nếu thuê xe máy, thêm 150.000 VNĐ/ngày.</p>
+
+            <h3>Kết luận</h3>
+            <p>Săn mây ở Hòa Bắc là trải nghiệm không thể bỏ lỡ khi đến Đà Nẵng. Với khung cảnh mây vờn núi và không khí yên bình, đây là nơi lý tưởng để "reset" bản thân. Hãy chuẩn bị kỹ và tận hưởng chuyến đi!</p>
+        `
+    },
+    {
+        id: 6,
+        title: "Những dụng cụ cần thiết cho chuyến phượt và du lịch",
+        summary: "Checklist đầy đủ các vật dụng thiết yếu giúp chuyến đi của bạn an toàn và tiện lợi, từ đồ điện tử đến đồ sinh tồn.",
+        image: "images/phuot.png",
+        date: "28/09/2025",
+        category: "Du lịch",
+        content: `
+            <h2>Giới thiệu</h2>
+            <p>Phượt hay du lịch bụi luôn đầy bất ngờ, nhưng với sự chuẩn bị kỹ lưỡng về dụng cụ, bạn sẽ tự tin hơn trên mọi cung đường. Dưới đây là checklist các món đồ cần thiết, tập trung vào đồ điện tử như USB, sạc dự phòng, nhưng không quên các vật dụng sinh tồn khác.</p>
+
+            <h2>1. Đồ điện tử và phụ kiện (USB, sạc dự phòng)</h2>
+            <p>Những món này giúp bạn kết nối và duy trì năng lượng cho thiết bị suốt hành trình:</p>
+            <ul>
+                <li><strong>Sạc dự phòng (power bank)</strong>: Dung lượng từ 10.000-20.000 mAh, đủ sạc điện thoại 2-3 lần. Chọn loại hỗ trợ sạc nhanh để tiện lợi.</li>
+                <li><strong>USB và thẻ nhớ</strong>: USB đa năng (ít nhất 32GB) để backup ảnh/video; thẻ nhớ dự phòng cho máy ảnh hoặc drone nếu bạn mang theo.</li>
+                <li><strong>Cáp sạc đa năng</strong>: Bao gồm cáp USB-C, Lightning và Micro-USB để tương thích mọi thiết bị.</li>
+                <li><strong>Adapter đa quốc gia</strong>: Nếu du lịch quốc tế, giúp sạc ở mọi ổ cắm.</li>
+            </ul>
+            <p>Mẹo: Luôn kiểm tra pin trước khi khởi hành và mang theo túi chống nước để bảo vệ đồ điện tử khỏi mưa.</p>
+
+            <h2>2. Dụng cụ sinh tồn và y tế cơ bản</h2>
+            <p>Những món này có thể cứu cánh trong tình huống khẩn cấp:</p>
+            <ul>
+                <li><strong>Hộp y tế cá nhân</strong>: Băng gạc, oxy già, thuốc đỏ, thuốc giảm đau, thuốc đau bụng, hạ sốt, thuốc chống côn trùng và kem chống nắng.</li>
+                <li><strong>Dao đa năng và bật lửa</strong>: Dùng để cắt dây, mở hộp thực phẩm hoặc tạo lửa khẩn cấp.</li>
+                <li><strong>Dây thừng và dụng cụ sửa xe</strong>: Nếu phượt xe máy, mang bộ vá lốp, dụng cụ cơ bản để xử lý sự cố.</li>
+                <li><strong>Đèn pin LED và bình nước cá nhân</strong>: Chọn loại có thể lọc nước nếu đi rừng núi.</li>
+            </ul>
+
+            <h2>3. Quần áo và giấy tờ</h2>
+            <p>Gọn nhẹ nhưng đầy đủ:</p>
+            <ul>
+                <li>Quần áo thoáng mát, chống UV; đồ lót dùng một lần nếu chuyến dài ngày.</li>
+                <li>Giấy tờ: CMND/CCCD, bằng lái xe, thẻ ngân hàng, bảo hiểm du lịch và bản sao kỹ thuật số (lưu trên USB).</li>
+                <li>Mũ bảo hiểm fullface, kính râm và balo chống nước.</li>
+            </ul>
+
+            <h3>Kết luận</h3>
+            <p>Với những dụng cụ này, chuyến phượt của bạn sẽ an toàn và thú vị hơn. Nhớ kiểm tra thời tiết và chia sẻ lịch trình với bạn bè. Chúc bạn có hành trình tuyệt vời!</p>
+        `
+    },
+    {
+        id: 7,
+        title: "Top 7 địa điểm phượt đỉnh cao ở Đà Nẵng dành cho bạn",
+        summary: "Gợi ý những cung đường phượt lý tưởng ở Đà Nẵng, từ đèo uốn lượn đến bãi biển hoang sơ, phù hợp cho chuyến đi sắp tới.",
+        image: "images/6.jpg",
+        date: "28/09/2025",
+        category: "Du lịch",
+        content: `
+            <h2>Giới thiệu</h2>
+            <p>Đà Nẵng là thiên đường phượt với địa hình đa dạng: biển xanh, núi non và đèo dốc. Dưới đây là top 7 địa điểm không thể bỏ qua, dễ dàng chinh phục bằng xe máy. Thời gian lý tưởng: Tháng 2-5, khi thời tiết khô ráo.</p>
+
+            <h2>1. Đèo Hải Vân</h2>
+            <p>Cung đường huyền thoại dài 20km nối Đà Nẵng - Huế, với độ cao 500m. Ngắm biển Đông và mây trời kỳ ảo, dừng chân tại các di tích lịch sử như nhà thờ Cao Đài. Lộ trình: Từ trung tâm Đà Nẵng, đi theo QL1A khoảng 30km.</p>
+
+            <h2>2. Bán đảo Sơn Trà</h2>
+            <p>"Đảo khỉ" xanh mướt với đường quanh co lý tưởng cho phượt. Ghé chùa Linh Ứng (tượng Phật Bà 67m), bãi Tiên Sa hoặc Bãi Bụt hoang sơ. Lộ trình: Từ cầu Rồng, đi 10km theo đường Võ Nguyên Giáp. Hoàn hảo cho trekking và ngắm hoàng hôn.</p>
+
+            <h2>3. Ngũ Hành Sơn</h2>
+            <p>Núi đá vôi huyền bí với hang động, chùa chiền. Leo 156 bậc thang để ngắm toàn cảnh biển. Lộ trình: Từ trung tâm, đi 8km theo QL1A. Phù hợp phượt nửa ngày, kết hợp tắm biển Mỹ Khê gần đó.</p>
+
+            <h2>4. Bà Nà Hills</h2>
+            <p>Thiên đường giải trí trên núi với cầu Vàng nổi tiếng. Phượt qua Suối Mơ và rừng nguyên sinh. Lộ trình: Từ Ngã Ba Huế, rẽ Hoàng Văn Thái khoảng 25km. Vé vào cổng: 900.000 VNĐ, nhưng cảnh quan đáng giá!</p>
+
+            <h2>5. Ghềnh Bàng</h2>
+            <p>Bãi đá hoang sơ với sóng vỗ và hang động. Lý tưởng cho check-in sống ảo. Lộ trình: Từ chùa Linh Ứng, đi 6km theo đường Hoàng Sa. Mang theo nước và kem chống nắng vì nắng gắt.</p>
+
+            <h2>6. Hồ Hòa Trung</h2>
+            <p>Hồ nước nhân tạo yên bình giữa cánh đồng cỏ và núi. Hoàn hảo cho cắm trại picnic. Lộ trình: Từ trung tâm, đi hướng Hòa Vang khoảng 15km. Không khí trong lành, lý tưởng thoát khỏi thành phố.</p>
+
+            <h2>7. Làng Vân</h2>
+            <p>Làng cổ dưới chân Hải Vân, hoang sơ và thanh bình. Đi bộ dọc đường ray để khám phá lịch sử. Lộ trình: Từ đèo Hải Vân, đi bộ 2-3km. Trải nghiệm mạo hiểm cho phượt thủ thực thụ.</p>
+
+            <h3>Mẹo phượt Đà Nẵng</h3>
+            <p>Thuê xe máy (150.000 VNĐ/ngày), mang hộp y tế và sạc dự phòng. Chi phí ước tính: 1.000.000 - 2.000.000 VNĐ cho 2 ngày (ăn ở + xăng). Chúc bạn có chuyến đi "xịn sò" ở Đà Nẵng!</p>
+        `
+    },
+    {
+        id: 8,
+        title: "Khám phá đèo Hải Vân – cung đường siêu chill",
+        summary: "Đèo Hải Vân – nơi giao thoa giữa núi và biển, một trong những cung đường đẹp nhất Việt Nam cho dân phượt.",
+        image: "images/hai-van.jpg",
+        date: "05/10/2025",
+        category: "Du lịch",
+        content: `
+        <h2>Giới thiệu</h2>
+        <p>Đèo Hải Vân, nằm giữa ranh giới Đà Nẵng và Thừa Thiên Huế, dài khoảng 20km, được mệnh danh là “Thiên hạ đệ nhất hùng quan”. Đây là cung đường lý tưởng cho dân phượt với những khúc cua uốn lượn, cảnh biển và núi hùng vĩ.</p>
+
+        <h2>1. Cách di chuyển</h2>
+        <p>Từ trung tâm Đà Nẵng, đi theo QL1A khoảng 30km. Xe máy là phương tiện phổ biến nhất, giúp bạn tận hưởng trọn vẹn khung cảnh. Nếu đi ô tô, có thể qua hầm Hải Vân (dài 6.28km) để tiết kiệm thời gian.</p>
+
+        <h2>2. Điểm dừng chân nổi bật</h2>
+        <ul>
+            <li><strong>Cổng Trời</strong>: Nằm trên đỉnh đèo, nơi lý tưởng để ngắm toàn cảnh biển và thành phố Đà Nẵng.</li>
+            <li><strong>Làng Vân</strong>: Một làng chài nhỏ nằm dưới chân đèo, yên bình và hoang sơ.</li>
+            <li><strong>Hải Vân Quan</strong>: Di tích lịch sử được xây dựng từ thời nhà Trần, ghi dấu ấn kiến trúc cổ.</li>
+        </ul>
+
+        <h2>3. Lưu ý khi phượt</h2>
+        <p>Đèo có nhiều khúc cua tay áo, sương mù dày vào sáng sớm, cần giữ tốc độ ổn định. Chuẩn bị áo khoác gió, nước uống và kiểm tra thắng xe trước khi đi.</p>
+
+        <h3>Kết luận</h3>
+        <p>Đèo Hải Vân không chỉ là cung đường phượt đẹp mà còn mang đậm giá trị lịch sử và văn hóa. Đây chắc chắn là trải nghiệm khó quên cho mọi du khách.</p>
+    `
+    },
+    {
+        id: 9,
+        title: "Top địa điểm săn mây nổi tiếng ở Việt Nam",
+        summary: "Ngoài Đà Nẵng, bạn có thể săn mây ở nhiều nơi khác như Tà Xùa, Y Tý, Đà Lạt… Mỗi nơi mang một vẻ đẹp riêng.",
+        image: "images/san-may.jpg",
+        date: "07/10/2025",
+        category: "Du lịch",
+        content: `
+        <h2>1. Tà Xùa (Sơn La)</h2>
+        <p>Thiên đường mây với những dãy núi trùng điệp, nổi tiếng với “sống lưng khủng long”. Thời gian lý tưởng: Tháng 11 – tháng 3.</p>
+
+        <h2>2. Y Tý (Lào Cai)</h2>
+        <p>Nằm ở độ cao 2.000m, Y Tý quanh năm mây phủ, kết hợp với ruộng bậc thang tuyệt đẹp. Thời gian lý tưởng: mùa lúa chín (tháng 9 – 10).</p>
+
+        <h2>3. Đà Lạt (Lâm Đồng)</h2>
+        <p>Đồi chè Cầu Đất, đồi Thiên Phúc Đức hay đồi Trại Mát là những nơi ngắm mây và bình minh huyền ảo. Nên đi sớm từ 4-5h sáng.</p>
+
+        <h2>4. Hòa Bắc (Đà Nẵng)</h2>
+        <p>Ngoài Tà Xùa và Y Tý, Hòa Bắc cũng là điểm săn mây nổi bật miền Trung với cảnh sắc bình yên, dễ tiếp cận.</p>
+
+        <h3>Kết luận</h3>
+        <p>Dù bạn chọn săn mây ở đâu, hãy chuẩn bị tốt về sức khỏe, phương tiện và an toàn. Mỗi hành trình sẽ là một trải nghiệm khó quên.</p>
+    `
+    },
+    {
+    id: 10,
+    title: "Thống kê các kênh học lập trình C/C++, Python, HTML/CSS/JS chất lượng",
+    summary: "Danh sách các kênh YouTube và website dạy lập trình phổ biến, giúp bạn học từ cơ bản đến nâng cao.",
+    image: "images/7.jpg",
+    date: "09/10/2025",
+    category: "Lập Trình",
+    content: `
+        <h2>1. C/C++</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/@KTeam6" target="_blank">Kteam</a> – Có series C/C++ chi tiết từ cơ bản đến nâng cao.</li>
+            <li><a href="https://www.youtube.com/@Codelearn" target="_blank">Codelearn</a> – Hướng dẫn lập trình C/C++ kèm thực hành online.</li>
+            <li><a href="https://cplusplus.com/" target="_blank">cplusplus.com</a> – Tài liệu chuẩn về C++.</li>
+        </ul>
+
+        <h2>2. Python</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/@CodeWithHarry" target="_blank">Code With Harry</a> – Kênh học Python dễ hiểu cho người mới bắt đầu.</li>
+            <li><a href="https://www.youtube.com/@freeCodeCamp" target="_blank">freeCodeCamp</a> – Có khóa Python 12 giờ full miễn phí.</li>
+            <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python</a> – Học nhanh qua ví dụ và chạy trực tiếp.</li>
+        </ul>
+
+        <h2>3. HTML / CSS / JavaScript</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/@F8VNOfficial" target="_blank">F8 Official</a> – Khóa học Web Frontend (HTML, CSS, JS) chi tiết bằng tiếng Việt.</li>
+            <li><a href="https://www.youtube.com/@TraversyMedia" target="_blank">Traversy Media</a> – Các khóa web dev ngắn gọn, dễ hiểu.</li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> – Tài liệu chuẩn của Mozilla về HTML, CSS, JS.</li>
+        </ul>
+
+        <h2>Kết luận</h2>
+        <p>Với các nguồn trên, bạn có thể tự học lập trình từ căn bản đến nâng cao. Hãy chọn kênh phù hợp và kiên trì luyện tập để đạt hiệu quả tốt nhất.</p>
+    `
+}
+
+
+];
+
+const blogCategories = [
+    "Tất cả",
+    "Mẹo & Thủ thuật",
+    "Du lịch"
+];

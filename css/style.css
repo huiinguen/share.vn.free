@@ -268,3 +268,76 @@ footer {
         font-size: 1.1em;
     }
 }
+/* ===================================== */
+/* MỚI: Thanh Điều Hướng Kiểu macOS Dock */
+/* ===================================== */
+.dock-nav {
+    position: fixed; /* Vị trí cố định */
+    bottom: 20px; /* Cách đáy 20px */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Tinh chỉnh lại vị trí căn giữa */
+    z-index: 1001; /* Luôn nằm trên cùng */
+    
+    display: flex;
+    align-items: flex-end; /* Căn các icon xuống dưới cùng */
+    gap: 10px; /* Khoảng cách giữa các icon */
+    padding: 10px 15px;
+    height: 70px; /* Chiều cao để có không gian cho hiệu ứng phóng to */
+    
+    background-color: rgba(255, 255, 255, 0.6); /* Nền trắng mờ */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    /* Hiệu ứng "kính mờ" đặc trưng */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.dock-nav a {
+    color: #333;
+    font-size: 28px; /* Kích thước icon */
+    padding: 10px;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Hiệu ứng mượt mà */
+}
+
+/* Chấm báo hiệu trang đang active */
+.dock-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #50b3a2;
+    border-radius: 50%;
+}
+
+/* Nhãn tên của icon khi hover */
+.dock-nav a .tooltip {
+    position: absolute;
+    bottom: 120%; /* Nằm phía trên icon */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dock-nav a:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px); /* Hiệu ứng nảy lên */
+}
