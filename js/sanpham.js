@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const sortBySelect = document.getElementById('sortBy');
     const paginationControls = document.getElementById('paginationControls');
+    const productCountElement = document.getElementById('productCount');
 
     const productsPerPage = 8;
     let currentPage = 1;
     let currentFilters = {
-        category: 'all', // Thay đổi mặc định thành 'all'
+        category: 'all',
         subCategory: null,
         searchTerm: '',
         sortBy: 'newest'
@@ -27,49 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return;
     }
-    function createCategoryMenu() {
-    if (!categoryFilterContainer) return;
-    const categories = [...new Set(allProducts.map(p => p.category))];
-    let html = `
-        <li class="category-item all-products-item">
-            <label>
-                <input type="radio" name="category" value="all">
-                Tất cả sản phẩm
-            </label>
-        </li>
-    `;
-    categories.forEach(category => {
-        html += `<li class="category-item" data-category="${category}">
-                    <div class="category-title">
-                        <label>
-                            <input type="radio" name="category" value="${category}">
-                            ${category}
-                        </label>
-                        <i class="fas fa-chevron-right toggle-icon"></i>
-                    </div>
-                    <ul class="subcategory-list">
-                    </ul>
-                </li>`;
-    });
-    categoryFilterContainer.innerHTML = html;
-}
 
-    // --- Bổ sung: Hàm cập nhật URL ---
+    // Hàm cập nhật URL
     function updateUrl() {
         const urlParams = new URLSearchParams();
-        if (currentFilters.category) urlParams.set('category', currentFilters.category);
+        if (currentFilters.category && currentFilters.category !== 'all') urlParams.set('category', currentFilters.category);
         if (currentFilters.subCategory) urlParams.set('subCategory', currentFilters.subCategory);
         if (currentFilters.searchTerm) urlParams.set('search', currentFilters.searchTerm);
-        if (currentFilters.sortBy) urlParams.set('sortBy', currentFilters.sortBy);
+        if (currentFilters.sortBy !== 'newest') urlParams.set('sortBy', currentFilters.sortBy);
         if (currentPage > 1) urlParams.set('page', currentPage);
         
         window.history.replaceState({}, '', `sanpham.html?${urlParams.toString()}`);
     }
 
-    // --- Bổ sung: Hàm khôi phục bộ lọc từ URL ---
+    // Hàm khôi phục bộ lọc từ URL
     function restoreFiltersFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
-        currentFilters.category = urlParams.get('category') || null;
+        
+        currentFilters.category = urlParams.get('category') || 'all';
         currentFilters.subCategory = urlParams.get('subCategory') || null;
         currentFilters.searchTerm = urlParams.get('search') || '';
         currentFilters.sortBy = urlParams.get('sortBy') || 'newest';
@@ -77,33 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (searchInput) searchInput.value = currentFilters.searchTerm;
         if (sortBySelect) sortBySelect.value = currentFilters.sortBy;
-
-        // Cập nhật giao diện của các radio button
-        if (categoryFilterContainer) {
-            // Đóng tất cả các subcategory ban đầu
-            document.querySelectorAll('.category-item.expanded').forEach(item => item.classList.remove('expanded'));
-            
-            const categoryRadio = categoryFilterContainer.querySelector(`input[name="category"][value="${currentFilters.category}"]`);
-            if (categoryRadio) {
-                categoryRadio.checked = true;
-                categoryRadio.closest('.category-item').classList.add('expanded'); // Mở mục cha
-            }
-            
-            const subCategoryRadio = categoryFilterContainer.querySelector(`input[name="subCategory"][value="${currentFilters.subCategory}"]`);
-            if (subCategoryRadio) {
-                subCategoryRadio.checked = true;
-                subCategoryRadio.closest('.category-item').classList.add('expanded'); // Mở mục cha
-            }
-        }
     }
 
     function displayProducts(products, page) {
         if (!allProductGrid) return;
 
-         allProductGrid.innerHTML = '';
-    const start = (page - 1) * productsPerPage;
-    const end = start + productsPerPage;
-    const productsToDisplay = products.slice(start, end);
+        allProductGrid.innerHTML = '';
+        const start = (page - 1) * productsPerPage;
+        const end = start + productsPerPage;
+        const productsToDisplay = products.slice(start, end);
 
         if (productsToDisplay.length === 0) {
             allProductGrid.innerHTML = '<p class="loading-text">Không tìm thấy sản phẩm nào phù hợp.</p>';
@@ -121,16 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const priceClass = product.price === 0 ? 'free' : '';
             const priceText = product.price === 0 ? 'Miễn phí' : formatCurrency(product.price);
 
-            // Cấu trúc mới: Icon + Tiêu đề
-            let iconClass = 'fa-share-alt'; // Icon mặc định
-            if (product.subCategory === 'Tiktok') {
-                iconClass = 'fa-brands fa-tiktok';
-            } else if (product.subCategory === 'Facebook') {
-                iconClass = 'fa-brands fa-facebook-f';
-            } else if (product.subCategory === 'Instagram') {
-                iconClass = 'fa-brands fa-instagram';
-            }
-            
             productCard.innerHTML = `
                 <h3 class="san-pham__title">${product.name}</h3>
                 <div class="product-info-bottom">
@@ -144,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupPagination(products) {
         if (!paginationControls) return;
         paginationControls.innerHTML = '';
-        const hasFilters = currentFilters.category || currentFilters.subCategory || currentFilters.searchTerm;
-        if (!hasFilters) return;
 
         const pageCount = Math.ceil(products.length / productsPerPage);
         if (pageCount <= 1) return;
@@ -187,6 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         paginationControls.appendChild(nextBtn);
     }
+
+    function updateProductCount(count) {
+        if (productCountElement) {
+            productCountElement.textContent = `Số sản phẩm: ${count}`;
+        }
+    }
     
     function filterAndSortProducts() {
         let results = [...allProducts];
@@ -221,16 +173,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     break;
             }
         }
-
+        
         filteredProducts = results;
         displayProducts(filteredProducts, currentPage);
         setupPagination(filteredProducts);
+        updateProductCount(filteredProducts.length);
     }
 
     function setupCategoryFilters() {
         if (!categoryFilterContainer) return;
         categoryFilterContainer.innerHTML = '';
         
+        const allItemLi = document.createElement('li');
+        allItemLi.classList.add('category-item', 'all-products-item');
+        allItemLi.innerHTML = `
+            <label>
+                <input type="radio" name="category" value="all" ${currentFilters.category === 'all' ? 'checked' : ''}>
+                Tất cả sản phẩm
+            </label>
+        `;
+        categoryFilterContainer.appendChild(allItemLi);
+
         const categoriesWithSub = {};
         allProducts.forEach(p => {
             if (!categoriesWithSub[p.category]) {
@@ -295,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initializeFilters() {
-        restoreFiltersFromUrl(); // Khôi phục trạng thái từ URL khi tải trang
+        restoreFiltersFromUrl();
         setupCategoryFilters();
         
         if (categoryFilterContainer) {
@@ -303,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = e.target;
                 if (target.name === 'category') {
                     currentFilters.category = target.value;
-                    currentFilters.subCategory = null; 
+                    currentFilters.subCategory = null;
                     const subRadios = categoryFilterContainer.querySelectorAll('input[name="subCategory"]');
                     subRadios.forEach(radio => radio.checked = false);
                 } else if (target.name === 'subCategory') {
@@ -368,7 +331,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFilters();
 });
 
-// Hàm format tiền tệ (cần thêm vào)
 function formatCurrency(price) {
     return price.toLocaleString('vi-VN') + 'đ';
 }

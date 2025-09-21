@@ -239,3 +239,22 @@ main > .container.page-layout {
 .product-info-bottom .price.free {
     color: #50b3a2;
 }
+/* Style cho ô hiển thị tổng sản phẩm */
+.product-count-container {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.product-count-text {
+    font-size: 1em;
+    font-weight: 500;
+    color: #555;
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+/* Đảm bảo nội dung không bị che khuất bởi thanh nav dưới cùng */
+.page-layout {
+    padding-bottom: 130px; /* Chiều cao của dock-nav + một chút khoảng trống */
+}

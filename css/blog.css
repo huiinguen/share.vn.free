@@ -66,6 +66,11 @@
     width: 100%;
     max-width: 300px;
 }
+.post-count {
+    font-weight: bold;
+    color: #555;
+    font-size: 1em;
+}
 
 .post-grid {
     display: grid;
@@ -268,4 +273,8 @@
         box-shadow: none;
         display: block;
     }
+}
+/* Đảm bảo nội dung không bị che khuất bởi thanh nav dưới cùng */
+.page-layout {
+    padding-bottom: 120px; /* Chiều cao của dock-nav + một chút khoảng trống */
 }

@@ -339,3 +339,7 @@
     width: 24px;
     height: 24px;
 }
+/* Tạo khoảng trống ở cuối trang để thanh Dock không che nội dung */
+.container {
+    margin-bottom: 90px;
+}

@@ -1,0 +1,65 @@
+/* ===================================== */
+/* Trang Thống Kê (Visit Counter) */
+/* ===================================== */
+.counter-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Đảm bảo nội dung được căn giữa theo chiều dọc */
+}
+
+.counter-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+    max-width: 900px; /* Giới hạn chiều rộng để nội dung không bị quá rộng */
+}
+
+.counter-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.counter-box .counter-icon {
+    font-size: 3em;
+    color: #50b3a2;
+    margin-bottom: 15px;
+}
+
+.counter-label {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.counter-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #50b3a2;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    80% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .counter-number {
+        font-size: 2.5em;
+    }
+}

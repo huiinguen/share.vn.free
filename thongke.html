@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống Kê</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thongke.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <nav class="dock-nav" id="dockNav">
+        <a href="index.html" title="Trang Chủ">
+            <i class="fas fa-house"></i>
+            <span class="tooltip">Trang Chủ</span>
+        </a>
+        <a href="sanpham.html" title="Sản Phẩm">
+            <i class="fas fa-box-archive"></i>
+            <span class="tooltip">Sản Phẩm</span>
+        </a>
+        <a href="blog.html" title="Blog">
+            <i class="fas fa-feather-alt"></i>
+            <span class="tooltip">Blog</span>
+        </a>
+        <a href="lienhe.html" title="Liên Hệ">
+            <i class="fas fa-phone"></i>
+            <span class="tooltip">Liên Hệ</span>
+        </a>
+        <a href="note.html" title="Note">
+            <i class="fas fa-file-lines"></i>
+            <span class="tooltip">Note</span>
+        </a>
+          <a href="thongke.html" title="Thống Kê">
+            <i class="fas fa-chart-bar"></i>
+            <span class="tooltip">Thống Kê</span>
+        </a>
+    </nav>
+    <main>
+        <section class="counter-section">
+            <div class="container">
+                <div class="counter-grid">
+                    <div class="counter-box total-visits">
+                        <i class="fas fa-globe-americas counter-icon"></i>
+                        <p class="counter-label">Tổng lượt truy cập:</p>
+                        <p id="totalVisits" class="counter-number">0</p>
+                    </div>
+                    <div class="counter-box monthly-visits">
+                        <i class="fas fa-calendar-alt counter-icon"></i>
+                        <p class="counter-label">Lượt truy cập trong tháng này:</p>
+                        <p id="monthlyVisits" class="counter-number">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/thongke.js"></script>
+</body>
+</html>

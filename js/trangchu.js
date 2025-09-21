@@ -64,11 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         latestBlogGrid.innerHTML = postsHtml;
     }
 
-    // Gọi các hàm để hiển thị nội dung
-    displayFeaturedProducts();
-    displayLatestPosts();
-
-
     // =============================================================
     // MỚI: Logic cho hiệu ứng chuyển động khi cuộn trang
     // =============================================================
@@ -76,21 +71,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // Khi khối lọt vào màn hình (isIntersecting)
             if (entry.isIntersecting) {
-                // Thêm class 'visible' để kích hoạt hiệu ứng trong CSS
                 entry.target.classList.add('visible');
-                // Dừng theo dõi khối này để hiệu ứng chỉ xảy ra 1 lần
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1 // Kích hoạt khi 10% của khối được nhìn thấy
+        threshold: 0.1
     });
 
-    // Bắt đầu theo dõi tất cả các khối đã chọn
     animatedSections.forEach(section => {
         observer.observe(section);
+    });
+
+    // =============================================================
+    // MỚI: Logic ẩn loader, hiển thị animation thứ 2 và sau đó là nội dung chính
+    // =============================================================
+    const loaderContainer = document.getElementById('loaderContainer');
+    const spookyHouseContainer = document.getElementById('spookyHouseContainer');
+    const mainContent = document.getElementById('mainContent');
+
+    window.addEventListener('load', function() {
+        // Sau 3 giây, ẩn loader xe tải và hiển thị hiệu ứng ngôi nhà
+        setTimeout(() => {
+            loaderContainer.style.opacity = '0';
+            setTimeout(() => {
+                loaderContainer.classList.add('hidden');
+                spookyHouseContainer.classList.remove('hidden');
+                // Sau 5 giây (thời gian hiệu ứng ngôi nhà chạy), ẩn nó và hiển thị nội dung chính
+                setTimeout(() => {
+                    spookyHouseContainer.style.opacity = '0';
+                    setTimeout(() => {
+                        spookyHouseContainer.classList.add('hidden');
+                        mainContent.classList.remove('hidden');
+                        // Gọi các hàm hiển thị nội dung sau khi trang đã tải xong
+                        displayFeaturedProducts();
+                        displayLatestPosts();
+                    }, 500); // Đợi hiệu ứng mờ dần của ngôi nhà kết thúc
+                }, 5000); // Thời gian hiệu ứng ngôi nhà
+            }, 500); // Đợi hiệu ứng mờ dần của xe tải kết thúc
+        }, 3000); // Thời gian xe tải chạy
     });
 
 });

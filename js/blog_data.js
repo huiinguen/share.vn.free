@@ -115,7 +115,7 @@ const blogPosts = [
         id: 8,
         title: "Khám phá đèo Hải Vân – cung đường siêu chill",
         summary: "Đèo Hải Vân – nơi giao thoa giữa núi và biển, một trong những cung đường đẹp nhất Việt Nam cho dân phượt.",
-        image: "images/hai-van.jpg",
+        image: "images/8.jpg",
         date: "05/10/2025",
         category: "Du lịch",
         content: `
@@ -143,7 +143,7 @@ const blogPosts = [
         id: 9,
         title: "Top địa điểm săn mây nổi tiếng ở Việt Nam",
         summary: "Ngoài Đà Nẵng, bạn có thể săn mây ở nhiều nơi khác như Tà Xùa, Y Tý, Đà Lạt… Mỗi nơi mang một vẻ đẹp riêng.",
-        image: "images/san-may.jpg",
+        image: "images/9.jpg",
         date: "07/10/2025",
         category: "Du lịch",
         content: `
@@ -165,7 +165,7 @@ const blogPosts = [
     },
     {
     id: 10,
-    title: "Thống kê các kênh học lập trình C/C++, Python, HTML/CSS/JS chất lượng",
+    title: "Các kênh học lập trình C/C++, Python, HTML/CSS/JS chất lượng",
     summary: "Danh sách các kênh YouTube và website dạy lập trình phổ biến, giúp bạn học từ cơ bản đến nâng cao.",
     image: "images/7.jpg",
     date: "09/10/2025",
@@ -195,7 +195,52 @@ const blogPosts = [
         <h2>Kết luận</h2>
         <p>Với các nguồn trên, bạn có thể tự học lập trình từ căn bản đến nâng cao. Hãy chọn kênh phù hợp và kiên trì luyện tập để đạt hiệu quả tốt nhất.</p>
     `
-}
+    },
+    {
+    id: 11,
+    title: "Kinh nghiệm học lập trình: Điểm mạnh, điểm yếu và những lưu ý quan trọng",
+    summary: "Chia sẻ hành trình học lập trình, từ cách tận dụng điểm mạnh đến khắc phục điểm yếu, cùng các mẹo để học hiệu quả hơn.",
+    image: "images/7.jpg",
+    date: "21/10/2025",
+    category: "Lập Trình",
+    content: `
+        <h2>Giới thiệu</h2>
+        <p>Học lập trình là một hành trình đầy thách thức nhưng cũng vô cùng thú vị. Dù bạn là người mới bắt đầu hay đã có kinh nghiệm, việc hiểu rõ điểm mạnh và điểm yếu của bản thân sẽ giúp bạn học hiệu quả hơn. Bài viết này chia sẻ kinh nghiệm cá nhân của tôi khi học lập trình, cùng những lưu ý quan trọng để bạn tự tin chinh phục các ngôn ngữ như Python, C++, hay JavaScript.</p>
+
+        <h2>1. Điểm mạnh của tôi khi học lập trình</h2>
+        <ul>
+            <li><strong>Tư duy logic</strong>: Tôi có khả năng phân tích vấn đề và chia nhỏ chúng thành các bước giải quyết, điều này rất hữu ích khi debug code hoặc xây dựng thuật toán.</li>
+            <li><strong>Kiên trì</strong>: Lập trình đòi hỏi sự bền bỉ. Tôi không dễ bỏ cuộc khi gặp lỗi, mà thường dành hàng giờ để tìm hiểu và thử nghiệm các cách giải quyết.</li>
+            <li><strong>Hứng thú với công nghệ</strong>: Sự tò mò về cách hoạt động của phần mềm và website giúp tôi duy trì động lực học, đặc biệt khi khám phá các thư viện mới như Pandas (Python) hay React (JavaScript).</li>
+        </ul>
+
+        <h2>2. Điểm yếu và cách khắc phục</h2>
+        <ul>
+            <li><strong>Thiếu tập trung</strong>: Ban đầu, tôi dễ bị phân tâm khi học những khái niệm phức tạp như đệ quy hay lập trình hướng đối tượng. <strong>Giải pháp</strong>: Tôi chia nhỏ thời gian học thành các phiên 25 phút (phương pháp Pomodoro) và nghỉ ngắn giữa các phiên để giữ đầu óc tỉnh táo.</li>
+            <li><strong>Ít thực hành dự án thực tế</strong>: Tôi thường tập trung vào lý thuyết mà bỏ qua việc áp dụng. <strong>Giải pháp</strong>: Tham gia các dự án nhỏ như xây dựng website cá nhân hoặc ứng dụng quản lý công việc để áp dụng kiến thức.</li>
+            <li><strong>Tự ti khi so sánh với người khác</strong>: Thấy bạn bè tiến bộ nhanh hơn, tôi từng mất động lực. <strong>Giải pháp</strong>: Tôi tập trung vào hành trình của riêng mình, đặt mục tiêu nhỏ như hoàn thành một bài tập trên LeetCode mỗi ngày.</li>
+        </ul>
+
+        <h2>3. Lưu ý khi học lập trình</h2>
+        <ul>
+            <li><strong>Xây dựng thói quen học đều đặn</strong>: Dành ít nhất 1-2 giờ mỗi ngày để code. Consistency is key!</li>
+            <li><strong>Học qua dự án thực tế</strong>: Thay vì chỉ đọc tài liệu, hãy thử xây dựng một ứng dụng đơn giản như to-do list hoặc máy tính cá nhân để hiểu rõ cách áp dụng lý thuyết.</li>
+            <li><strong>Tham gia cộng đồng</strong>: Các diễn đàn như Stack Overflow, GitHub, hoặc group lập trình trên Facebook giúp bạn học hỏi từ người khác và giải đáp thắc mắc nhanh chóng.</li>
+            <li><strong>Quản lý thời gian</strong>: Tránh ôm đồm nhiều ngôn ngữ cùng lúc. Hãy tập trung thành thạo một ngôn ngữ (ví dụ: Python) trước khi chuyển sang ngôn ngữ khác.</li>
+            <li><strong>Ghi chú và ôn tập</strong>: Tôi thường ghi lại các lỗi thường gặp (như "NullPointerException" trong Java) và cách khắc phục để ôn lại khi cần.</li>
+        </ul>
+
+        <h2>4. Tài nguyên học tập đề xuất</h2>
+        <ul>
+            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a>: Khóa học miễn phí về Python, JavaScript, và nhiều ngôn ngữ khác, kèm dự án thực tế.</li>
+            <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a>: Các bài học tương tác giúp bạn làm quen với cú pháp nhanh chóng.</li>
+            <li><a href="https://leetcode.com/" target="_blank">LeetCode</a>: Nền tảng tuyệt vời để luyện thuật toán và chuẩn bị phỏng vấn.</li>
+        </ul>
+
+        <h3>Kết luận</h3>
+        <p>Học lập trình không chỉ là học cú pháp mà còn là hành trình khám phá bản thân. Hiểu rõ điểm mạnh và yếu của mình, kết hợp với sự kiên trì và phương pháp học đúng đắn, sẽ giúp bạn tiến xa. Hãy bắt đầu với một dự án nhỏ, kiên nhẫn và tận hưởng quá trình! Chúc bạn thành công trên con đường lập trình!</p>
+    `
+    }
 
 
 ];

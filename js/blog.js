@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const blogCategoriesList = document.getElementById('blogCategories');
     const blogSearchInput = document.getElementById('blogSearchInput');
     const blogPagination = document.getElementById('blogPagination');
+    const postCountElement = document.getElementById('postCount');
 
     const postsPerPage = 6;
     let currentPage = 1;
@@ -35,9 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         renderPosts(paginatedPosts);
         renderPagination(totalPages);
+        renderPostCount(filteredPosts.length);
     }
 
     // --- Render Functions ---
+    function renderPostCount(count) {
+        if (postCountElement) {
+            postCountElement.textContent = `Số bài viết: ${count}`;
+        }
+    }
+
     function renderPosts(postsToRender) {
         blogPostGrid.innerHTML = ''; // Clear previous posts
         if (postsToRender.length === 0) {
@@ -126,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Initial Load ---
     renderCategories();
     filterAndRenderPosts();
-});// --- Logic cho Responsive Sidebar ---
+// --- Logic cho Responsive Sidebar ---
     const filterToggleBtn = document.getElementById('filterToggle');
     const sidebarFilters = document.getElementById('sidebarFilters');
     const closeFilterBtn = document.getElementById('closeFilterBtn');
@@ -155,3 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sidebarOverlay) {
         sidebarOverlay.addEventListener('click', closeSidebar);
     }
+});
