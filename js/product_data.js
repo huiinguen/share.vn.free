@@ -606,6 +606,16 @@ var allProducts = [
         subCategory: 'Lập trình',
         resourceLink: 'https://codepen.io/collection/XMoeqD',
     },
+    {
+        id: 61,
+        name: 'Theme code(html,css)',
+        price: 0,
+        images_gallery: ['images/py.jpg', 'images/placeholder.png', 'images/placeholder.png'],// ảnh
+        category: 'Tài Nguyên',
+        subCategory: 'Lập trình',
+        resourceLink: 'https://www.themedevhub.com/',
+    },
+
 
 
 ];

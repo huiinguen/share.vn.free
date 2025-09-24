@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const priceText = product.price === 0 ? 'Miễn phí' : formatCurrency(product.price);
             const imageSrc = product.images_gallery && product.images_gallery.length > 0 ? product.images_gallery[0] : 'images/placeholder.png';
 
+            // Thêm class 'no-image-border' để loại bỏ khung ảnh
             productsHtml += `
-                <a href="sanpham_chitiet.html?id=${product.id}" class="product-card">
+                <a href="sanpham_chitiet.html?id=${product.id}" class="product-card no-image-border">
                     <div class="product-image">
                         <img src="${imageSrc}" alt="${product.name}">
                     </div>
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================================
-    // MỚI: Logic cho hiệu ứng chuyển động khi cuộn trang
+    // Logic cho hiệu ứng chuyển động khi cuộn trang
     // =============================================================
     const animatedSections = document.querySelectorAll('.animate-section');
 
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =============================================================
-    // MỚI: Logic ẩn loader, hiển thị animation thứ 2 và sau đó là nội dung chính
+    // Logic ẩn loader, hiển thị animation thứ 2 và sau đó là nội dung chính
     // =============================================================
     const loaderContainer = document.getElementById('loaderContainer');
     const spookyHouseContainer = document.getElementById('spookyHouseContainer');
@@ -98,7 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 loaderContainer.classList.add('hidden');
                 spookyHouseContainer.classList.remove('hidden');
-                // Sau 5 giây (thời gian hiệu ứng ngôi nhà chạy), ẩn nó và hiển thị nội dung chính
+                spookyHouseContainer.style.opacity = '1';
+                
+                // Sau 5 giây, ẩn nó và hiển thị nội dung chính
                 setTimeout(() => {
                     spookyHouseContainer.style.opacity = '0';
                     setTimeout(() => {
@@ -107,10 +110,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Gọi các hàm hiển thị nội dung sau khi trang đã tải xong
                         displayFeaturedProducts();
                         displayLatestPosts();
-                    }, 500); // Đợi hiệu ứng mờ dần của ngôi nhà kết thúc
-                }, 5000); // Thời gian hiệu ứng ngôi nhà
-            }, 500); // Đợi hiệu ứng mờ dần của xe tải kết thúc
-        }, 3000); // Thời gian xe tải chạy
+                    }, 500);
+                }, 5000);
+            }, 500);
+        }, 3000);
     });
 
 });

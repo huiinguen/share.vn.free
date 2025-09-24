@@ -202,7 +202,7 @@
     margin-bottom: 15px;
 }
 
-/* Responsive adjustments */
+/* responsive adjustments */
 @media (max-width: 768px) {
     .section-title {
         font-size: 1.8em;
@@ -218,6 +218,24 @@
     .post-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ===================================== */
+/* NÂNG CẤP: Loại bỏ khung ảnh sản phẩm */
+/* ===================================== */
+a.product-card.no-image-border {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    transition: none;
+    text-align: center;
+}
+a.product-card.no-image-border:hover {
+    transform: none;
+    box-shadow: none;
+}
+a.product-card.no-image-border .product-image {
+    display: none; /* Ẩn hoàn toàn phần ảnh */
 }
 
 /* ============== LOADER STYLES ============== */
