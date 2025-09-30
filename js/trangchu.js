@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Gọi các hàm hiển thị nội dung ngay sau khi DOM được tải
+    displayFeaturedProducts();
+    displayLatestPosts();
+    
     // =====================================
     // Logic hiển thị sản phẩm nổi bật
     // =====================================
@@ -83,37 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     animatedSections.forEach(section => {
         observer.observe(section);
-    });
-
-    // =============================================================
-    // Logic ẩn loader, hiển thị animation thứ 2 và sau đó là nội dung chính
-    // =============================================================
-    const loaderContainer = document.getElementById('loaderContainer');
-    const spookyHouseContainer = document.getElementById('spookyHouseContainer');
-    const mainContent = document.getElementById('mainContent');
-
-    window.addEventListener('load', function() {
-        // Sau 3 giây, ẩn loader xe tải và hiển thị hiệu ứng ngôi nhà
-        setTimeout(() => {
-            loaderContainer.style.opacity = '0';
-            setTimeout(() => {
-                loaderContainer.classList.add('hidden');
-                spookyHouseContainer.classList.remove('hidden');
-                spookyHouseContainer.style.opacity = '1';
-                
-                // Sau 5 giây, ẩn nó và hiển thị nội dung chính
-                setTimeout(() => {
-                    spookyHouseContainer.style.opacity = '0';
-                    setTimeout(() => {
-                        spookyHouseContainer.classList.add('hidden');
-                        mainContent.classList.remove('hidden');
-                        // Gọi các hàm hiển thị nội dung sau khi trang đã tải xong
-                        displayFeaturedProducts();
-                        displayLatestPosts();
-                    }, 500);
-                }, 5000);
-            }, 500);
-        }, 3000);
     });
 
 });

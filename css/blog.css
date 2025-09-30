@@ -278,3 +278,18 @@
 .page-layout {
     padding-bottom: 120px; /* Chiều cao của dock-nav + một chút khoảng trống */
 }
+/* ===================================== */
+/* Định kiểu cho Hình ảnh Logo */
+/* ===================================== */
+.logo-img {
+    height: 50px; /* Điều chỉnh chiều cao mong muốn */
+    width: auto; /* Giữ tỷ lệ khung hình */
+    vertical-align: middle; /* Căn giữa ảnh theo chiều dọc */
+}
+
+/* Tùy chọn: Xóa các style logo cũ nếu không còn dùng chữ nữa */
+/* Xóa hoặc comment các style sau: */
+/*
+.logo { ... }
+.logo-text { ... }
+*/
