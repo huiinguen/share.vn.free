@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/trangchu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
-<header class="main-header">
-    <div class="header-content container">
-        <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="Logo Trang Web" class="logo-img">
-        </a>
-    </div>
-</header>
-<nav class="dock-nav" id="dockNav">
+    <header class="main-header">
+        <div class="header-content container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Logo Trang Web" class="logo-img">
+            </a>
+        </div>
+    </header>
+    <nav class="dock-nav" id="dockNav">
         <a href="index.html" title="Trang Chủ">
             <i class="fas fa-house"></i>
             <span class="tooltip">Trang Chủ</span>
@@ -25,77 +28,78 @@
             <i class="fas fa-box-archive"></i>
             <span class="tooltip">Sản Phẩm</span>
         </a>
-        <a href="blog.html" title="Blog">
-            <i class="fas fa-feather-alt"></i>
-            <span class="tooltip">Blog</span>
-        </a>
-        <a href="note.html" title="Note">
-            <i class="fas fa-file-lines"></i>
-            <span class="tooltip">Note</span>
-        </a>
     </nav>
-<main id="mainContent">
-    <section class="content-section featured-products animate-section from-left">
-        <div class="container">
-            <h2 class="section-title">Tài Nguyên Mới Nhất</h2>
-            <p class="section-subtitle">Khám phá các source code, tài liệu và công cụ hữu ích được cập nhật gần đây.</p>
-            <div class="product-grid" id="featuredProductGrid">
-            </div>
-            <div class="section-cta">
-                <a href="sanpham.html" class="cta-button">Xem tất cả tài nguyên</a>
-            </div>
-        </div>
-    </section>
+    <main id="mainContent">
+        <section class="content-section featured-products animate-section from-left">
+            <div class="container">
+                <h2 class="section-title">Tài Nguyên Mới Nhất</h2>
+                <p class="section-subtitle">Khám phá các source code, tài liệu và công cụ hữu ích được cập nhật gần đây.
+                </p>
 
-    <section class="category-nav-section animate-section from-right">
-        <div class="container">
-            <h2 class="section-title">Khám Phá Theo Danh Mục</h2>
-            <div class="category-nav-grid">
-                <a href="sanpham.html?category=Tài+Nguyên&subCategory=Lập+trình" class="category-card">
-                    <h3><i class="fas fa-code"></i> Source Code</h3>
-                    <p>Tổng hợp source code đa dạng từ nhiều ngôn ngữ lập trình khác nhau.</p>
-                </a>
-                <a href="sanpham.html?category=Tài+Nguyên&subCategory=Mod(app,module...)" class="category-card">
-                    <h3><i class="fas fa-mobile-alt"></i> Ứng Dụng & Mods</h3>
-                    <p>Các ứng dụng, module và công cụ tiện ích cho thiết bị của bạn.</p>
-                </a>
-                <a href="sanpham.html?category=Tài+Nguyên&subCategory=Khóa+học" class="category-card">
-                    <h3><i class="fas fa-graduation-cap"></i> Khóa Học Miễn Phí</h3>
-                    <p>Tiếp cận các khóa học chất lượng về lập trình, marketing và hơn thế nữa.</p>
-                </a>
-                <a href="blog.html" class="category-card">
-                    <h3><i class="fas fa-feather-alt"></i> Blog Chia Sẻ</h3>
-                    <p>Đọc các bài viết về thủ thuật, lập trình và những trải nghiệm du lịch.</p>
-                </a>
+                <div class="swiper" id="featuredProductSwiper">
+                    <div class="swiper-wrapper" id="featuredProductGrid">
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="section-cta">
+                    <a href="sanpham.html" class="cta-button">Xem tất cả tài nguyên</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="content-section latest-blog-posts animate-section from-left">
-        <div class="container">
-            <h2 class="section-title">Bài Viết Mới Trên Blog</h2>
-            <p class="section-subtitle">Cập nhật kiến thức và những câu chuyện du lịch thú vị từ chúng tôi.</p>
-            <div class="post-grid" id="latestBlogGrid">
+        <section class="category-nav-section animate-section from-right">
+            <div class="container">
+                <h2 class="section-title">Khám Phá Theo Danh Mục</h2>
+                <div class="category-nav-grid">
+                    <a href="sanpham.html?category=Tài+Nguyên&subCategory=Lập+trình" class="category-card">
+                        <h3><i class="fas fa-code"></i> Source Code</h3>
+                        <p>Tổng hợp source code đa dạng từ nhiều ngôn ngữ lập trình khác nhau.</p>
+                    </a>
+                    <a href="sanpham.html?category=Tài+Nguyên&subCategory=Mod(app,module...)" class="category-card">
+                        <h3><i class="fas fa-mobile-alt"></i> Ứng Dụng & Mods</h3>
+                        <p>Các ứng dụng, module và công cụ tiện ích cho thiết bị của bạn.</p>
+                    </a>
+                    <a href="sanpham.html?category=Tài+Nguyên&subCategory=Khóa+học" class="category-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Khóa Học Miễn Phí</h3>
+                        <p>Tiếp cận các khóa học chất lượng về lập trình, marketing và hơn thế nữa.</p>
+                    </a>
+                    <a href="blog.html" class="category-card">
+                        <h3><i class="fas fa-feather-alt"></i> Blog Chia Sẻ</h3>
+                        <p>Đọc các bài viết về thủ thuật, lập trình và những trải nghiệm du lịch.</p>
+                    </a>
+                </div>
             </div>
-            <div class="section-cta">
-                <a href="blog.html" class="cta-button">Đọc thêm bài viết</a>
+        </section>
+
+        <section class="content-section latest-blog-posts animate-section from-left">
+            <div class="container">
+                <h2 class="section-title">Bài Viết Mới Trên Blog</h2>
+                <p class="section-subtitle">Cập nhật kiến thức và những câu chuyện du lịch thú vị từ chúng tôi.</p>
+                <div class="post-grid" id="latestBlogGrid">
+                </div>
+                <div class="section-cta">
+                    <a href="blog.html" class="cta-button">Đọc thêm bài viết</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-us-snippet animate-section">
-        <div class="container">
-            <h2 class="section-title">Về Chúng Tôi</h2>
-            <p>ChiaSe.VN là nơi chúng tôi chia sẻ miễn phí kiến thức, tài nguyên và những trải nghiệm cá nhân với mong muốn tạo ra một cộng đồng học hỏi và phát triển. Mọi tài nguyên ở đây đều được khuyến khích sử dụng cho mục đích học tập và phi thương mại.</p>
-            <a href="note.html" class="cta-button secondary">Xem điều khoản</a>
-        </div>
-    </section>
+        <section class="about-us-snippet animate-section">
+            <div class="container">
+                <h2 class="section-title">Về Chúng Tôi</h2>
+                <a href="note.html" class="cta-button secondary">Xem điều khoản</a>
+            </div>
+        </section>
 
-</main>
+    </main>
 
-<script src="js/product_data.js"></script>
-<script src="js/blog_data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/trangchu.js"></script>
+    <script src="js/product_data.js"></script>
+    <script src="js/blog_data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/trangchu.js"></script>
 </body>
+
 </html>

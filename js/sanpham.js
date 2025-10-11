@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const paginationControls = document.getElementById('paginationControls');
     const productCountElement = document.getElementById('productCount');
 
+    // Các thành phần cho QR Modal
+    const qrModal = document.getElementById('qrModal');
+    const closeQrModalBtn = document.getElementById('closeQrModal');
+    const qrcodeContainer = document.getElementById('qrcodeContainer');
+    const qrProductLinkText = document.getElementById('qrProductLink');
+
+    // ⚠️ ĐÃ NÂNG CẤP: Thêm BASE_URL để tạo đường dẫn tuyệt đối cho QR Code
+    // Thay thế bằng domain chính thức của bạn (hiện tại là GitHub Pages)
+    const BASE_URL = 'https://huiinguen.github.io/share.vn.free/'; 
+
     const productsPerPage = 8;
     let currentPage = 1;
     let currentFilters = {
@@ -29,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Hàm cập nhật URL
+    // ===========================================
+    // HÀM XỬ LÝ LỌC & SẮP XẾP
+    // ===========================================
+
     function updateUrl() {
         const urlParams = new URLSearchParams();
         if (currentFilters.category && currentFilters.category !== 'all') urlParams.set('category', currentFilters.category);
@@ -41,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.history.replaceState({}, '', `sanpham.html?${urlParams.toString()}`);
     }
 
-    // Hàm khôi phục bộ lọc từ URL
     function restoreFiltersFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
         
@@ -55,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sortBySelect) sortBySelect.value = currentFilters.sortBy;
     }
 
+    // Hàm hiển thị sản phẩm
     function displayProducts(products, page) {
         if (!allProductGrid) return;
 
@@ -69,22 +82,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         productsToDisplay.forEach(product => {
+            // Lấy các tham số hiện tại (ví dụ: category=...)
             const currentUrlParams = new URLSearchParams(window.location.search);
-            const productLink = `sanpham_chitiet.html?id=${product.id}&${currentUrlParams.toString()}`;
             
-            const productCard = document.createElement('a');
-            productCard.href = productLink;
+            // ⚠️ ĐÃ NÂNG CẤP: Tạo đường dẫn tuyệt đối cho mã QR
+            // Chỉ cần link chi tiết cơ bản (sanpham_chitiet.html?id=...)
+            // Không nên thêm quá nhiều filter/page vào QR code
+            const relativeProductPath = `sanpham_chitiet.html?id=${product.id}`;
+            const productLinkForQr = BASE_URL + relativeProductPath; 
+            
+            const productCard = document.createElement('div'); 
             productCard.classList.add('product-card');
 
             const priceClass = product.price === 0 ? 'free' : '';
             const priceText = product.price === 0 ? 'Miễn phí' : formatCurrency(product.price);
 
-            productCard.innerHTML = `
+            // Thẻ <a> cho nội dung chính của sản phẩm (Link click vào)
+            const productLinkContent = document.createElement('a');
+            
+            // Đường dẫn tương đối đơn giản cho thẻ A (chỉ cần ID)
+            productLinkContent.href = `sanpham_chitiet.html?id=${product.id}`; 
+            
+            productLinkContent.classList.add('product-card-link-content');
+            productLinkContent.innerHTML = `
                 <h3 class="san-pham__title">${product.name}</h3>
                 <div class="product-info-bottom">
                     <p class="price ${priceClass}">${priceText}</p>
                 </div>
             `;
+
+            // Nút icon chia sẻ
+            const shareButton = document.createElement('button');
+            shareButton.classList.add('share-icon-btn');
+            shareButton.innerHTML = '<i class="fas fa-qrcode"></i>';
+            // Gán đường dẫn ĐẦY ĐỦ để mã QR luôn chính xác
+            shareButton.setAttribute('data-product-url', productLinkForQr); 
+            
+            // Xử lý sự kiện click cho nút chia sẻ
+            shareButton.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                e.stopPropagation(); 
+                // Sử dụng URL tuyệt đối
+                openQrModal(this.getAttribute('data-product-url'));
+            });
+
+            productCard.appendChild(productLinkContent);
+            productCard.appendChild(shareButton);
             allProductGrid.appendChild(productCard);
         });
     }
@@ -107,7 +150,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         paginationControls.appendChild(prevBtn);
 
-        for (let i = 1; i <= pageCount; i++) {
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(pageCount, currentPage + 2);
+        
+        if (currentPage <= 3) {
+            endPage = Math.min(pageCount, 5);
+            startPage = 1;
+        } else if (currentPage > pageCount - 2) {
+            startPage = Math.max(1, pageCount - 4);
+            endPage = pageCount;
+        }
+
+        if (startPage > 1) {
+            const dotBtn = document.createElement('span');
+            dotBtn.textContent = '...';
+            paginationControls.appendChild(dotBtn);
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
             const pageBtn = document.createElement('button');
             pageBtn.textContent = i;
             if (i === currentPage) {
@@ -120,6 +180,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             paginationControls.appendChild(pageBtn);
+        }
+        
+        if (endPage < pageCount) {
+             const dotBtn = document.createElement('span');
+            dotBtn.textContent = '...';
+            paginationControls.appendChild(dotBtn);
         }
 
         const nextBtn = document.createElement('button');
@@ -169,11 +235,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     break;
                 case 'newest':
                 default:
-                    results.sort((a, b) => b.id - a.id);
+                    results.sort((a, b) => (b.id || 0) - (a.id || 0)); 
                     break;
             }
         }
         
+        const maxPage = Math.ceil(results.length / productsPerPage);
+        if (currentPage > maxPage && maxPage > 0) {
+            currentPage = maxPage;
+        } else if (results.length === 0) {
+            currentPage = 1;
+        }
+
         filteredProducts = results;
         displayProducts(filteredProducts, currentPage);
         setupPagination(filteredProducts);
@@ -208,8 +281,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const categoryLi = document.createElement('li');
             categoryLi.classList.add('category-item');
             
-            const isCategoryActive = currentFilters.category === category;
-            if (isCategoryActive) {
+            const isCategoryActive = currentFilters.category === category && !currentFilters.subCategory;
+            
+            let shouldExpand = isCategoryActive;
+            if (categoriesWithSub[category].has(currentFilters.subCategory)) {
+                 shouldExpand = true;
+            }
+            if (shouldExpand) {
                 categoryLi.classList.add('expanded');
             }
 
@@ -217,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categoryTitleDiv.classList.add('category-title');
             categoryTitleDiv.innerHTML = `
                 <label>
-                    <input type="radio" name="category" value="${category}" ${isCategoryActive ? 'checked' : ''}>
+                    <input type="radio" name="category" value="${category}" ${isCategoryActive && !currentFilters.subCategory ? 'checked' : ''}>
                     ${category}
                 </label>
                 <i class="fas fa-chevron-right toggle-icon"></i>
@@ -278,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentPage = 1;
                 updateUrl();
                 filterAndSortProducts();
+                closeSidebar(); 
             });
         }
         
@@ -304,6 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
         filterAndSortProducts();
     }
 
+    // ===========================================
+    // HÀM XỬ LÝ SIDEBAR (MOBILE)
+    // ===========================================
     function openSidebar() {
         sidebarFilters.classList.add('active');
         sidebarOverlay.classList.add('active');
@@ -328,6 +410,60 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarOverlay.addEventListener('click', closeSidebar);
     }
 
+    // ===========================================
+    // HÀM XỬ LÝ QR CODE MODAL
+    // ===========================================
+
+    function openQrModal(productUrl) {
+        // Xóa nội dung cũ
+        qrcodeContainer.innerHTML = '';
+        
+        // Cập nhật URL trong modal
+        qrProductLinkText.textContent = productUrl;
+
+        // KIỂM TRA: Đảm bảo thư viện QRCode đã được tải
+        if (typeof QRCode !== 'undefined') {
+             // Kích thước QR (ví dụ: 180x180)
+            new QRCode(qrcodeContainer, {
+                text: productUrl, // Sử dụng URL tuyệt đối
+                width: 180,
+                height: 180,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        } else {
+            // Thông báo nếu thư viện chưa tải
+            qrcodeContainer.innerHTML = '<p>Thư viện QR Code (QRCode.js) chưa được tải. Vui lòng kiểm tra lại file HTML.</p>';
+        }
+
+        // Hiển thị modal
+        qrModal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Ngăn cuộn nền
+    }
+
+    // Đóng Modal khi nhấn nút 'x'
+    if (closeQrModalBtn) {
+        closeQrModalBtn.onclick = function() {
+            qrModal.style.display = "none";
+            document.body.style.overflow = '';
+            qrcodeContainer.innerHTML = ''; // Dọn dẹp mã QR
+        }
+    }
+
+    // Đóng Modal khi nhấn ra ngoài
+    if (qrModal) {
+        window.onclick = function(event) {
+            if (event.target == qrModal) {
+                qrModal.style.display = "none";
+                document.body.style.overflow = '';
+                qrcodeContainer.innerHTML = ''; // Dọn dẹp mã QR
+            }
+        }
+    }
+
+
+    // KHỞI TẠO
     initializeFilters();
 });
 

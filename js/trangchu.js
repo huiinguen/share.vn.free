@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayLatestPosts();
     
     // =====================================
-    // Logic hiển thị sản phẩm nổi bật
+    // Logic hiển thị sản phẩm nổi bật (Đã thay đổi cho SWIPER)
     // =====================================
     function displayFeaturedProducts() {
         const featuredProductGrid = document.getElementById('featuredProductGrid');
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Lấy tối đa 8 sản phẩm nổi bật
         const featuredProducts = allProducts.slice(0, 8); 
 
         let productsHtml = '';
@@ -24,24 +25,75 @@ document.addEventListener('DOMContentLoaded', function() {
             const priceText = product.price === 0 ? 'Miễn phí' : formatCurrency(product.price);
             const imageSrc = product.images_gallery && product.images_gallery.length > 0 ? product.images_gallery[0] : 'images/placeholder.png';
 
-            // Thêm class 'no-image-border' để loại bỏ khung ảnh
+            // Mỗi sản phẩm là một Swiper Slide
             productsHtml += `
-                <a href="sanpham_chitiet.html?id=${product.id}" class="product-card no-image-border">
-                    <div class="product-image">
-                        <img src="${imageSrc}" alt="${product.name}">
-                    </div>
-                    <div class="product-info">
-                        <h3>${product.name}</h3>
-                        <p class="price ${priceClass}">${priceText}</p>
-                    </div>
-                </a>
+                <div class="swiper-slide">
+                    <a href="sanpham_chitiet.html?id=${product.id}" class="product-card no-image-border">
+                        <div class="product-image">
+                            <img src="${imageSrc}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p class="price ${priceClass}">${priceText}</p>
+                        </div>
+                    </a>
+                </div>
             `;
         });
         featuredProductGrid.innerHTML = productsHtml;
+        
+        // Khởi tạo Swiper sau khi nội dung đã được thêm vào DOM
+        initProductSwiper();
+    }
+    
+    // =====================================
+    // Logic khởi tạo Swiper Carousel
+    // =====================================
+    function initProductSwiper() {
+        const productSwiperElement = document.getElementById('featuredProductSwiper');
+        if (!productSwiperElement) return;
+
+        const featuredProductSwiper = new Swiper(productSwiperElement, {
+            // Tốc độ trượt
+            speed: 600,
+            // Khoảng cách giữa các slide
+            spaceBetween: 25, 
+            // Vòng lặp vô tận (tùy chọn)
+            loop: true, 
+            
+            // Số lượng slide hiển thị trên màn hình
+            slidesPerView: 1, 
+
+            // Cấu hình Responsive: thay đổi slidesPerView theo kích thước màn hình
+            breakpoints: {
+                // Khi chiều rộng màn hình >= 640px
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                // Khi chiều rộng màn hình >= 1024px
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                }
+            },
+
+            // Thêm phân trang (dấu chấm)
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Thêm nút điều hướng (mũi tên)
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     }
 
     // =====================================
-    // Logic hiển thị bài blog mới nhất
+    // Logic hiển thị bài blog mới nhất (KHÔNG ĐỔI)
     // =====================================
     function displayLatestPosts() {
         const latestBlogGrid = document.getElementById('latestBlogGrid');
@@ -70,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================================
-    // Logic cho hiệu ứng chuyển động khi cuộn trang
+    // Logic cho hiệu ứng chuyển động khi cuộn trang (KHÔNG ĐỔI)
     // =============================================================
     const animatedSections = document.querySelectorAll('.animate-section');
 

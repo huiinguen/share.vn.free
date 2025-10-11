@@ -1,26 +1,31 @@
 var allProducts = [
   /*
-    {
-        id: 2,                // vị trí id
-        name: '',             // tên sản phẩm
-        price: 0,             // giá
-        images_gallery: ['images/py.jpg', 'images/placeholder.png', 'images/placeholder.png'],// ảnh
-        category: '',         // thư mục mẹ
-        subCategory: '',      // thư mục con
-        resourceLink: '' ,    // link
-        description: '',      // mô tả
-        functions: '',        // chức năng
-        status: '',           // Các trạng thái khác
-    },
-    */
+  {
+    id: 38,  // vị trí id
+    name: "Tên sản phẩm",
+    price:  , // Giá gốc
+    salePrice: , // Giá sale
+    rating: 4.5, // tỉ lệ đánh giá
+    version: "1.5",  // phiên bản sản phẩm
+    saleEndDate: "2025-12-31T23:59:59",    // Thiết lập thời hạn sale đến cuối năm 2025
+    images_gallery: ["images/1.png"], // lấy ảnh
+    category: "Mua Bán",  // mục chính
+    subCategory: "Tool",  // mục phụ
+    description: "", // ghi chú
+    functions:"", //chức năng (nếu xuống dòng thì \n)
+    status: "Đang có ưu đãi đặc biệt",  // trạng thái
+    resourceLink:"",  // link đích
+  },
+  */
   {
     id: 1,
     name: "Sourcode web bán hàng(php)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://drive.google.com/file/d/1bjGwV6-9t8tHG64jWE_ddd3X_xvurkiW/view?fbclid=IwY2xjawMKzSVleHRuA2FlbQIxMABicmlkETEwbHFWSHpyRVloVXVHSXNTAR7MIoPcrzvNch_DPzf6LYmIbMl7B-EUmlO6J6KVv1QW-2FmZGlW8g0VSO86Dg_aem_qFU4bP_1FQBxSy28zYCy_w",
+    resourceLink:
+      "https://drive.google.com/file/d/1bjGwV6-9t8tHG64jWE_ddd3X_xvurkiW/view?fbclid=IwY2xjawMKzSVleHRuA2FlbQIxMABicmlkETEwbHFWSHpyRVloVXVHSXNTAR7MIoPcrzvNch_DPzf6LYmIbMl7B-EUmlO6J6KVv1QW-2FmZGlW8g0VSO86Dg_aem_qFU4bP_1FQBxSy28zYCy_w",
     description: "Mô tả chi tiết về sourcode web bán hàng...", // mô tả
     functions: "Quản lý sản phẩm, đơn hàng, khách hàng; giỏ hàng, thanh toán.", // chức năng
     status: "Vẫn cập nhật", // Các trạng thái khác: 'Hết cập nhật', 'Đã ngừng', v.v.
@@ -32,7 +37,8 @@ var allProducts = [
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Tool",
-    resourceLink:"https://github.com/huiinguen/sourcecode/tree/main/python/tool%20tds",
+    resourceLink:
+      "https://github.com/huiinguen/sourcecode/tree/main/python/tool%20tds",
   },
   {
     id: 3,
@@ -41,7 +47,8 @@ var allProducts = [
     images_gallery: ["images/locket.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/hvbstar/coderhvb/main/Locket_Gold_HVB.sgmodule",
+    resourceLink:
+      "https://raw.githubusercontent.com/hvbstar/coderhvb/main/Locket_Gold_HVB.sgmodule",
   },
   {
     id: 4,
@@ -50,7 +57,8 @@ var allProducts = [
     images_gallery: ["images/locket.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule",
+    resourceLink:
+      "https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule",
   },
   {
     id: 5,
@@ -68,7 +76,8 @@ var allProducts = [
     images_gallery: ["images/yt.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/quocchienn/YouTubePIP/refs/heads/YouTube%2B%2B/YouTubefix3.conf",
+    resourceLink:
+      "https://raw.githubusercontent.com/quocchienn/YouTubePIP/refs/heads/YouTube%2B%2B/YouTubefix3.conf",
   },
   {
     id: 7,
@@ -77,7 +86,8 @@ var allProducts = [
     images_gallery: ["images/yt.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule",
+    resourceLink:
+      "https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule",
   },
   {
     id: 8,
@@ -86,7 +96,8 @@ var allProducts = [
     images_gallery: ["images/spotify.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/quocchienn/1in1/refs/heads/main/Spotify.conf",
+    resourceLink:
+      "https://raw.githubusercontent.com/quocchienn/1in1/refs/heads/main/Spotify.conf",
   },
   {
     id: 9,
@@ -95,7 +106,8 @@ var allProducts = [
     images_gallery: ["images/spotify.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/quocchienn/1in1/refs/heads/main/Spotify.module",
+    resourceLink:
+      "https://raw.githubusercontent.com/quocchienn/1in1/refs/heads/main/Spotify.module",
   },
   {
     id: 10,
@@ -104,7 +116,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/vantuan380/vantuan/refs/heads/main/soundcloud.module",
+    resourceLink:
+      "https://raw.githubusercontent.com/vantuan380/vantuan/refs/heads/main/soundcloud.module",
   },
   {
     id: 11,
@@ -113,7 +126,8 @@ var allProducts = [
     images_gallery: ["images/shadow.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/quocchienn/Make/refs/heads/crack/ALL_Lucky_VP3.modules",
+    resourceLink:
+      "https://raw.githubusercontent.com/quocchienn/Make/refs/heads/crack/ALL_Lucky_VP3.modules",
   },
   {
     id: 12,
@@ -122,7 +136,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/vantuan380/vantuan/refs/heads/main/Meitu.module",
+    resourceLink:
+      "https://raw.githubusercontent.com/vantuan380/vantuan/refs/heads/main/Meitu.module",
   },
   {
     id: 13,
@@ -141,7 +156,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/vantuan380/phonton/refs/heads/main/lightroom.module",
+    resourceLink:
+      "https://raw.githubusercontent.com/vantuan380/phonton/refs/heads/main/lightroom.module",
   },
   {
     id: 15,
@@ -159,7 +175,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://drive.google.com/drive/u/0/folders/1XxvRMSDA-KgfRL8oC-vLkbUpM8Tdcq3o",
+    resourceLink:
+      "https://drive.google.com/drive/u/0/folders/1XxvRMSDA-KgfRL8oC-vLkbUpM8Tdcq3o",
   },
   {
     id: 17,
@@ -168,7 +185,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/orgs/TheAlgorithms/repositories?q=sort%3Astars&utm_source=j2team&utm_medium=url_shortener&utm_campaign=The-Algorithms",
+    resourceLink:
+      "https://github.com/orgs/TheAlgorithms/repositories?q=sort%3Astars&utm_source=j2team&utm_medium=url_shortener&utm_campaign=The-Algorithms",
   },
   {
     id: 18,
@@ -186,7 +204,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/1ZaS5kstFSNlxms07pQHL7d8q5ENY5W-G",
+    resourceLink:
+      "https://drive.google.com/drive/folders/1ZaS5kstFSNlxms07pQHL7d8q5ENY5W-G",
   },
   {
     id: 20,
@@ -195,7 +214,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/1QLbk4yfZ5VLhuzYDhQAhmI2f36SwXQlh",
+    resourceLink:
+      "https://drive.google.com/drive/folders/1QLbk4yfZ5VLhuzYDhQAhmI2f36SwXQlh",
   },
   {
     id: 21,
@@ -204,7 +224,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/codetoanbug/Tai_Lieu_cpp?fbclid=IwY2xjawMXhipleHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR7nufqhYr2PkFKl0XguRztCOJYDdGstgYvzCiUcm_ZSRAIy38WVpXlix7BLAg_aem_4nAlqQmR77lKAF6eDCsTjw",
+    resourceLink:
+      "https://github.com/codetoanbug/Tai_Lieu_cpp?fbclid=IwY2xjawMXhipleHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR7nufqhYr2PkFKl0XguRztCOJYDdGstgYvzCiUcm_ZSRAIy38WVpXlix7BLAg_aem_4nAlqQmR77lKAF6eDCsTjw",
   },
   {
     id: 22,
@@ -213,7 +234,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/lydiahallie/javascript-questions/blob/master/vi-VI/README-vi.md?fbclid=IwY2xjawMXiZ5leHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR43ecPpe7NEEKGa-hpapFJeNnBsNRrKFms35NTx87rJlcw9APWIwad9XFrkqg_aem_X6xueb_8bw_j7OLguSZtZA",
+    resourceLink:
+      "https://github.com/lydiahallie/javascript-questions/blob/master/vi-VI/README-vi.md?fbclid=IwY2xjawMXiZ5leHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR43ecPpe7NEEKGa-hpapFJeNnBsNRrKFms35NTx87rJlcw9APWIwad9XFrkqg_aem_X6xueb_8bw_j7OLguSZtZA",
   },
   {
     id: 23,
@@ -222,7 +244,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/MAZHARMIK/Interview_DS_Algo?fbclid=IwY2xjawMXiiFleHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR7nufqhYr2PkFKl0XguRztCOJYDdGstgYvzCiUcm_ZSRAIy38WVpXlix7BLAg_aem_4nAlqQmR77lKAF6eDCsTjw",
+    resourceLink:
+      "https://github.com/MAZHARMIK/Interview_DS_Algo?fbclid=IwY2xjawMXiiFleHRuA2FlbQIxMABicmlkETF2dExOd0dleDNqOXpvN3NhAR7nufqhYr2PkFKl0XguRztCOJYDdGstgYvzCiUcm_ZSRAIy38WVpXlix7BLAg_aem_4nAlqQmR77lKAF6eDCsTjw",
   },
   {
     id: 24,
@@ -231,7 +254,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    description:"làm theo video mod locket gold ipa để tải ksign và nhập ipa capcut vô ksign để dùng capcut",
+    description:
+      "làm theo video mod locket gold ipa để tải ksign và nhập ipa capcut vô ksign để dùng capcut",
     resourceLink: "https://ipaomtk.com/capcut-ipa/",
   },
   {
@@ -241,7 +265,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/Locket-V4.module",
+    resourceLink:
+      "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/Locket-V4.module",
   },
   {
     id: 27,
@@ -250,7 +275,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Tool",
-    description:"tổng hợp nhiều tính năng đỉnh cho người thích mày mò,IT,sáng tạo.",
+    description:
+      "tổng hợp nhiều tính năng đỉnh cho người thích mày mò,IT,sáng tạo.",
     resourceLink: "https://it-tools.tech/",
   },
   {
@@ -278,7 +304,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://docs.google.com/document/d/13fcIsgVpZWXAPbdRYZR5yhCYJ8Zyw2rNOdNbZeIdkRs/edit?tab=t.0#heading=h.ezhl5ec3e9jy",
+    resourceLink:
+      "https://docs.google.com/document/d/13fcIsgVpZWXAPbdRYZR5yhCYJ8Zyw2rNOdNbZeIdkRs/edit?tab=t.0#heading=h.ezhl5ec3e9jy",
   },
   {
     id: 31,
@@ -296,7 +323,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/1FNNweSUKpAYYx9BOPh9ZN0D3RfXnJy9Q",
+    resourceLink:
+      "https://drive.google.com/drive/folders/1FNNweSUKpAYYx9BOPh9ZN0D3RfXnJy9Q",
   },
   {
     id: 33,
@@ -305,7 +333,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/136c-IJJobaVaq_dmyE9o2svj4GX49F4v",
+    resourceLink:
+      "https://drive.google.com/drive/folders/136c-IJJobaVaq_dmyE9o2svj4GX49F4v",
   },
   {
     id: 34,
@@ -314,7 +343,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://docs.google.com/spreadsheets/d/1cM32swSy-hXu7ypQqqD7jmDiOMdJfW_JWFIJqGMHQKs/edit?gid=0#gid=0",
+    resourceLink:
+      "https://docs.google.com/spreadsheets/d/1cM32swSy-hXu7ypQqqD7jmDiOMdJfW_JWFIJqGMHQKs/edit?gid=0#gid=0",
   },
   {
     id: 35,
@@ -341,18 +371,27 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/1lQpnZoyG7hI-V57xOtn9-qOGfL5yoLq4",
+    resourceLink:
+      "https://drive.google.com/drive/folders/1lQpnZoyG7hI-V57xOtn9-qOGfL5yoLq4",
   },
   {
     id: 38,
-    name: "App edit ảnh-video",
+    name: "App edit ảnh-video tự động",
     price: 350000,
-    images_gallery: ["images/1.png","images/3.png","images/4.png","images/5.png",],
-    category: "MUA BÁN",
-    subCategory: "App",
-    description: "tặng free 2 ngày,random 1 tháng(10 slot/ mỗi đợt)",
-    functions: "edit video(cắt,lặp,lọc,thêm viền,thay nhạc nền...) ",
-    resourceLink:"https://github.com/huiinguen/sourcecode/tree/main/python/app%20edit%20%E1%BA%A3nh-video",
+    salePrice: 290000,
+    rating: 4.5,
+    version: "1.5",
+    saleEndDate: "2025-11-31T23:59:59",
+    images_gallery: ["images/py.jpg"],
+    category: "Mua Bán",
+    subCategory: "Tool",
+    description:
+      "Công cụ chỉnh sửa video và ảnh tự động, giúp tối ưu hóa quy trình làm việc cho các nhà sáng tạo nội dung.",
+    functions:
+      "Cắt video, lặp đoạn\n thêm hiệu ứng\nThêm viền, thay nhạc nền tự động\n...tham khảo",
+    status: "Đang có ưu đãi đặc biệt",
+    resourceLink:
+      "https://github.com/huiinguen/sourcecode/tree/main/python/app%20edit%20%E1%BA%A3nh-video",
   },
   {
     id: 39,
@@ -370,7 +409,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/1-d_zpGlu8ma4mnFXvXw_5m1_5VEso2t7",
+    resourceLink:
+      "https://drive.google.com/drive/folders/1-d_zpGlu8ma4mnFXvXw_5m1_5VEso2t7",
   },
   {
     id: 41,
@@ -379,7 +419,8 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/1kKu-Ln2CMlmm05TRSRd1-1B0DTNzuU0I",
+    resourceLink:
+      "https://drive.google.com/drive/folders/1kKu-Ln2CMlmm05TRSRd1-1B0DTNzuU0I",
   },
   {
     id: 42,
@@ -388,7 +429,8 @@ var allProducts = [
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/codetoanbug/Java-HIT-2019?fbclid=IwY2xjawMf-S9leHRuA2FlbQIxMABicmlkETFSWEFMY0pqTHVMeHVmRURnAR4wz8RubAqFwosvS2RjPnWTDN5wksIDYyQdEdxNsoVqYNgjMnetdLCskNohMA_aem_5PuTCslE3DpGBiNb1SQIpg",
+    resourceLink:
+      "https://github.com/codetoanbug/Java-HIT-2019?fbclid=IwY2xjawMf-S9leHRuA2FlbQIxMABicmlkETFSWEFMY0pqTHVMeHVmRURnAR4wz8RubAqFwosvS2RjPnWTDN5wksIDYyQdEdxNsoVqYNgjMnetdLCskNohMA_aem_5PuTCslE3DpGBiNb1SQIpg",
   },
   {
     id: 43,
@@ -397,7 +439,8 @@ var allProducts = [
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/codetoanbug/Java-PTIT?fbclid=IwY2xjawMf-XlleHRuA2FlbQIxMABicmlkETFSWEFMY0pqTHVMeHVmRURnAR4CSbJZbvlJmzVh2GRwp_w_2zuhmtoT35FViCmOwjP15emA8sdv8AYCpvdvQw_aem_eSbL5JLxmxGysWh9dZ8Vpg",
+    resourceLink:
+      "https://github.com/codetoanbug/Java-PTIT?fbclid=IwY2xjawMf-XlleHRuA2FlbQIxMABicmlkETFSWEFMY0pqTHVMeHVmRURnAR4CSbJZbvlJmzVh2GRwp_w_2zuhmtoT35FViCmOwjP15emA8sdv8AYCpvdvQw_aem_eSbL5JLxmxGysWh9dZ8Vpg",
   },
   {
     id: 44,
@@ -406,7 +449,8 @@ var allProducts = [
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/codetoanbug/pytutor?fbclid=IwY2xjawMf-iZleHRuA2FlbQIxMABicmlkETFSWEFMY0pqTHVMeHVmRURnAR4Zlaq9aSsL6R55wcwIEXp0dNxyXaVO1tl94gCvBWXegx7v2b7DB1eb0TFwzA_aem_5NeJJ4WIk08ZmQ6_TQnu6Q",
+    resourceLink:
+      "https://github.com/codetoanbug/pytutor?fbclid=IwY2xjawMf-iZleHRuA2FlbQIxMABicmlkETFSWEFMY0pqTHVMeHVmRURnAR4Zlaq9aSsL6R55wcwIEXp0dNxyXaVO1tl94gCvBWXegx7v2b7DB1eb0TFwzA_aem_5NeJJ4WIk08ZmQ6_TQnu6Q",
   },
   {
     id: 45,
@@ -415,7 +459,8 @@ var allProducts = [
     images_gallery: ["images/locket.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    resourceLink:"https://drive.google.com/drive/folders/143gIjNgJd096-w7XF8xDNBJtsbzuASZU",
+    resourceLink:
+      "https://drive.google.com/drive/folders/143gIjNgJd096-w7XF8xDNBJtsbzuASZU",
   },
   {
     id: 46,
@@ -424,31 +469,34 @@ var allProducts = [
     images_gallery: ["images/"],
     category: "Tài Nguyên",
     subCategory: "Khóa học",
-    resourceLink:"https://drive.google.com/drive/folders/17OmUO45MVdow04ahkvtad2c5Up-cjnMU",
+    resourceLink:
+      "https://drive.google.com/drive/folders/17OmUO45MVdow04ahkvtad2c5Up-cjnMU",
   },
   {
     id: 47,
     name: "Lập trình DOT NET(ytb)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://www.youtube.com/playlist?list=PLRLJQuuRRcFnwlQxGeVSVv-z_5tFwAh0j",
+    resourceLink:
+      "https://www.youtube.com/playlist?list=PLRLJQuuRRcFnwlQxGeVSVv-z_5tFwAh0j",
   },
   {
     id: 48,
     name: "Lập trình JAVA 2019",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/codetoanbug/Java-HIT-2019?fbclid=IwY2xjawMukXtleHRuA2FlbQIxMABicmlkETFwVXBnQ3VidzkycG9KeDRJAR4cPRfvHE9ENUUbDeYUxeC_s9OYKQa06yY9gv7rbdQ6rgo24H1nG1Ploa7nXQ_aem_AkO0-mANdDzsxzPLGOz2dQ",
+    resourceLink:
+      "https://github.com/codetoanbug/Java-HIT-2019?fbclid=IwY2xjawMukXtleHRuA2FlbQIxMABicmlkETFwVXBnQ3VidzkycG9KeDRJAR4cPRfvHE9ENUUbDeYUxeC_s9OYKQa06yY9gv7rbdQ6rgo24H1nG1Ploa7nXQ_aem_AkO0-mANdDzsxzPLGOz2dQ",
   },
   {
     id: 49,
     name: "Lập trình JAVA(file code)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
     resourceLink:
@@ -458,7 +506,7 @@ var allProducts = [
     id: 50,
     name: "icon lập trình web",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Lập trình",
     resourceLink: "https://fontawesome.com/search?o=r",
@@ -467,7 +515,7 @@ var allProducts = [
     id: 51,
     name: "Lấy Nhạc nền",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], // ảnh
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Quay dựng",
     resourceLink: "https://www.myinstants.com/fr/index/vn/",
@@ -476,17 +524,18 @@ var allProducts = [
     id: 52,
     name: "Firebase",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], // ảnh
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Data",
-    description:"Đồng bộ data(thời gian thực),lưu trữ ảnh cho lập trình app và web",
+    description:
+      "Đồng bộ data(thời gian thực),lưu trữ ảnh cho lập trình app và web",
     resourceLink: "",
   },
   {
     id: 53,
     name: "Mẫu code(html/css/js)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Lập trình",
     resourceLink: "https://uiverse.io/elements",
@@ -495,7 +544,7 @@ var allProducts = [
     id: 54,
     name: "Full tài liệu lập trình(pdf)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",],
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Lập trình",
     resourceLink: "https://goalkicker.com/",
@@ -504,7 +553,7 @@ var allProducts = [
     id: 55,
     name: "Màu phim LUT",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Quay dựng",
     resourceLink: "https://fixthephoto.com/vi/film-luts",
@@ -513,7 +562,7 @@ var allProducts = [
     id: 56,
     name: "Render",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Data",
     description: "Deploy hỗ trợ backend free(python,...) free 512mb-0.2GB CPU",
@@ -523,16 +572,17 @@ var allProducts = [
     id: 57,
     name: "Full lập trình c and project",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://github.com/codetoanbug/The-Ultimate-C-Programming-Course?fbclid=IwY2xjawM7waBleHRuA2FlbQIxMABicmlkETE0ZUNoQnFhbGdMVDRaWXBuAR6DUMJx4AJVjQAtyuzbC5UEaSGzpdmMMJdI2irIIjy--94dUGstxlbd-FpUVA_aem_yAUs70NvG4szUHozyxZDPA",
+    resourceLink:
+      "https://github.com/codetoanbug/The-Ultimate-C-Programming-Course?fbclid=IwY2xjawM7waBleHRuA2FlbQIxMABicmlkETE0ZUNoQnFhbGdMVDRaWXBuAR6DUMJx4AJVjQAtyuzbC5UEaSGzpdmMMJdI2irIIjy--94dUGstxlbd-FpUVA_aem_yAUs70NvG4szUHozyxZDPA",
   },
   {
     id: 58,
     name: "JavaScript Full Course",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
     resourceLink: "https://www.youtube.com/watch?v=EerdGm-ehJQ",
@@ -541,7 +591,7 @@ var allProducts = [
     id: 59,
     name: "giảm dung lượng ảnh,video",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], // ảnh
+    images_gallery: ["images/py.jpg"],
     category: "Web",
     subCategory: "Data",
     resourceLink: "https://www.youcompress.com/videos/",
@@ -550,7 +600,7 @@ var allProducts = [
     id: 60,
     name: "Mẫu code(html,css,js)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
     resourceLink: "https://codepen.io/collection/XMoeqD",
@@ -559,7 +609,7 @@ var allProducts = [
     id: 61,
     name: "Theme code(html,css)",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
     resourceLink: "https://www.themedevhub.com/",
@@ -572,66 +622,185 @@ var allProducts = [
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
     description: "link web: https://dvsteam.vn/locket-free",
-    resourceLink:"https://www.tiktok.com/@lockethuuich/video/7546502668047469832",
+    resourceLink:
+      "https://www.tiktok.com/@lockethuuich/video/7546502668047469832",
   },
-    {
+  {
     id: 63,
     name: "Tool C++ CMD BOX",
     price: 0,
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Tool",
-    resourceLink:"https://github.com/huiinguen/sourcecode/tree/main/c%2B%2B/CMD%20BOX",
-    description: "Đơn giản hóa theo tác lệnh CMD trên máy", 
-    functions: "SỬA LỖI,XEM THÔNG TIN PHẦN CỨNG,RENEW IP,...", 
+    resourceLink:
+      "https://github.com/huiinguen/sourcecode/tree/main/c%2B%2B/CMD%20BOX",
+    description: "Đơn giản hóa theo tác lệnh CMD trên máy tính",
+    functions: "SỬA LỖI\nXEM THÔNG TIN PHẦN CỨNG\nRENEW IP,...",
     status: "Vẫn cập nhật",
   },
-      {
+  {
     id: 64,
     name: "Tổng hợp 300 Prompt đa năng",
     price: 0,
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Prompt AI",
-    resourceLink:"https://academy.openai.com/public/tags/prompt-packs-6849a0f98c613939acef841c?fbclid=IwY2xjawNIzVRleHRuA2FlbQIxMABicmlkETFZVlF2WHVLS05nWEpIWU1NAR45V0SeTFKGz53z9-256aTMWtcU5XiVFUFc3CGZRo2KYItt4C-rQAvsXDFJ6g_aem_21CasUjZMjr35LAmYJEL5w",
-    description: "300 PROMPT AI trong đời sống", 
+    resourceLink:
+      "https://academy.openai.com/public/tags/prompt-packs-6849a0f98c613939acef841c?fbclid=IwY2xjawNIzVRleHRuA2FlbQIxMABicmlkETFZVlF2WHVLS05nWEpIWU1NAR45V0SeTFKGz53z9-256aTMWtcU5XiVFUFc3CGZRo2KYItt4C-rQAvsXDFJ6g_aem_21CasUjZMjr35LAmYJEL5w",
+    description: "300 PROMPT AI trong đời sống",
   },
-    {
+  {
     id: 65,
     name: "Playlist 26 video bài giảng về Deep Learning",
     price: 0,
-    images_gallery: ["images/py.jpg","images/placeholder.png","images/placeholder.png",], 
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Lập trình",
-    resourceLink:"https://www.youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9",
+    resourceLink:
+      "https://www.youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9",
   },
-    {
+  {
     id: 66,
     name: "Nhân bản app trên máy tính",
     price: 0,
-    images_gallery: ["images/"],
+    images_gallery: ["images/py.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
-    description:"video hdsd: https://www.youtube.com/watch?v=lMADbcCZU78",
-    resourceLink: "https://github.com/sandboxie-plus/Sandboxie/releases/tag/v1.16.3",
+    description: "video hdsd: https://www.youtube.com/watch?v=lMADbcCZU78",
+    resourceLink:
+      "https://github.com/sandboxie-plus/Sandboxie/releases/tag/v1.16.3",
   },
-      {
+  {
     id: 67,
     name: "Cấu hình chặn quảng cáo iphone",
     price: 0,
-    images_gallery: ["images/10.jpg","images/11.jpg"],
+    images_gallery: ["images/10.jpg", "images/11.jpg"],
     category: "Tài Nguyên",
     subCategory: "Mod(app,module...)",
     resourceLink: "https://www.mediafire.com/file/mp73j9qvevt2hdq",
   },
-    {
+  {
     id: 68,
     name: "Tool cào ảnh(link)",
+    price: 10000,
+    images_gallery: ["images/flappybird_code.jpg"],
+    category: "Mua Bán",
+    subCategory: "Tool",
+    resourceLink: "",
+  },
+  {
+    id: 69,
+    name: "Cắt nhiều video tự động",
+    price: 50000,
+    salePrice: 35000,
+    version: "1.5",
+    rating: 4.5,
+    saleEndDate: "2025-12-31T23:59:59",
+    images_gallery: ["images/flappybird_code.jpg"],
+    category: "Mua Bán",
+    subCategory: "Tool",
+    resourceLink: "",
+    status: "Đang có ưu đãi đặc biệt",
+    functions: "cắt nhiều video/lần\n cắt tốc độ nhanh \n tùy chỉnh số lần cắt",
+  },
+  {
+    id: 70,
+    name: "Tạo video chill dài",
+    price: 40000,
+    salePrice: 30000,
+    version: "1.5",
+    rating: 4.5,
+    saleEndDate: "2025-12-31T23:59:59",
+    images_gallery: ["images/flappybird_code.jpg"],
+    category: "Mua Bán",
+    subCategory: "Tool",
+    resourceLink: "",
+    status: "Đang có ưu đãi đặc biệt",
+    functions: "tạo nhiều video/lần\n tùy chỉnh time video \n chạy nhanh",
+  },
+  {
+    id: 71,
+    name: "Cào video(youtube,tiktok)",
+    price: 40000,
+    salePrice: 30000,
+    saleEndDate: "2025-12-31T23:59:59",
+    version: "1.5",
+    rating: 4.5,
+    images_gallery: ["images/flappybird_code.jpg"],
+    category: "Mua Bán",
+    subCategory: "Tool",
+    resourceLink: "",
+    status: "Đang có ưu đãi đặc biệt",
+    functions:
+      "cào video nền tảng youtube/tiktok dạng cào kênh\n cào 1 lần nhiều video\n cào thông qua từ khóa",
+  },
+  {
+    id: 72,
+    name: "Kênh học AI(YOUTUBE)",
+    price: 0,
+    images_gallery: ["images/py.jpg"],
+    category: "Tài Nguyên",
+    subCategory: "Lập trình",
+    resourceLink: "https://www.youtube.com/@stanfordonline/videos",
+  },
+  {
+    id: 73,
+    name: "Office tool",
     price: 0,
     images_gallery: ["images/flappybird_code.jpg"],
     category: "Tài Nguyên",
     subCategory: "Tool",
-    resourceLink:"https://github.com/huiinguen/sourcecode/tree/main/python/tool%20c%C3%A0o%20%E1%BA%A3nh(link)",
+    resourceLink: "",
+  },
+  {
+    id: 74,
+    name: "Crask app",
+    price: 0,
+    images_gallery: ["images/flappybird_code.jpg"],
+    category: "Tài Nguyên",
+    subCategory: "Tool",
+    resourceLink: "",
+    functions: "check win\nactive win-office\n...tham khảo",
+  },
+  {
+    id: 75,
+    name: "Tool chống lỗi cài win",
+    price: 0,
+    images_gallery: ["images/flappybird_code.jpg"],
+    category: "Tài Nguyên",
+    subCategory: "Tool",
+    functions: "chống lỗi ẩn ổ cứng khi cài win",
+    resourceLink: "",
+  },
+  {
+    id: 76,
+    name: "Capcut mod apk",
+    price: 0,
+    images_gallery: ["images/locket.jpg"],
+    category: "Tài Nguyên",
+    subCategory: "Mod(app,module...)",
+    functions: "Mod tính năng pro->free\n",
+    resourceLink:
+      "https://www.mediafire.com/file/orwquudpcecuccm/Capcut_PRO_15.3.0-15300300_Apksmod%E1%B5%97%E1%B5%98%E1%B5%87%E1%B5%92%E1%B5%97%E1%B5%92%E1%B6%9C%E1%B5%88%E1%B5%92.apk/file",
+  },
+  {
+    id: 77,
+    name: "Tut capcut free ngày",
+    price: 0,
+    images_gallery: ["images/locket.jpg"],
+    category: "Tài Nguyên",
+    subCategory: "Mod(app,module...)",
+    resourceLink:
+      "https://docs.google.com/document/d/14InVQjknhqTjEB_3zSILAlV5bhqqdIgaPcHasKrzahM/edit?tab=t.0#heading=h.apsvobr6lifq",
+  },
+  {
+    id: 78,
+    name: "Excel",
+    price: 0,
+    images_gallery: ["images/"],
+    category: "Tài Nguyên",
+    subCategory: "Khóa học",
+    resourceLink:"https://drive.google.com/drive/folders/1c-vkF3LWF1-OAyCfILIHC12bHlr4TBoQ",
   },
 ];
 

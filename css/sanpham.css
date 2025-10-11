@@ -202,7 +202,9 @@ main > .container.page-layout {
 }
 
 .product-card {
-    display: block; /* Hoặc display: flex; và flex-direction: column; */
+    position: relative; /* Thêm để định vị nút chia sẻ */
+    display: flex; 
+    flex-direction: column; /* Thêm để sắp xếp nội dung dọc */
     padding: 15px;
     background-color: #fff;
     border-radius: 8px;
@@ -211,7 +213,27 @@ main > .container.page-layout {
     text-decoration: none;
     color: inherit;
 }
-
+.share-icon-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    font-size: 1.2em;
+    padding: 5px;
+    z-index: 5; /* Đảm bảo nút nằm trên card */
+    transition: color 0.2s;
+}
+.product-card-link-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.share-icon-btn:hover {
+    color: #50b3a2;
+}
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -220,10 +242,12 @@ main > .container.page-layout {
 
 
 .san-pham__title {
-    margin: 0;
+    margin: 0 0 10px 0;
     font-size: 1.1em;
     font-weight: bold;
     color: #333;
+    /* Điều chỉnh để tránh icon */
+    padding-right: 30px; 
 }
 
 .product-info-bottom {
@@ -266,10 +290,120 @@ main > .container.page-layout {
     width: auto; /* Giữ tỷ lệ khung hình */
     vertical-align: middle; /* Căn giữa ảnh theo chiều dọc */
 }
+/* ===================================== */
+/* STYLE CHO ICON GIỎ HÀNG TRÊN NAV */
+/* ===================================== */
+.cart-icon-nav {
+    position: relative;
+}
 
-/* Tùy chọn: Xóa các style logo cũ nếu không còn dùng chữ nữa */
-/* Xóa hoặc comment các style sau: */
-/*
-.logo { ... }
-.logo-text { ... }
-*/
+.cart-count {
+    position: absolute;
+    top: 5px; /* Điều chỉnh vị trí của số */
+    right: 5px; /* Điều chỉnh vị trí của số */
+    background-color: #e74c3c; /* Màu đỏ nổi bật */
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 5px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1.2;
+}
+/* ===================================== */
+/* STYLE CHO ICON GIỎ HÀNG TRÊN NAV */
+/* ===================================== */
+.dock-nav a {
+    position: relative; /* Quan trọng để căn chỉnh .cart-count */
+}
+
+.cart-count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #e74c3c; /* Màu đỏ nổi bật */
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+    line-height: 1;
+    display: none; /* Mặc định ẩn, chỉ hiện khi có sản phẩm (sẽ được điều khiển bằng JS) */
+    transform: translate(50%, -50%);
+}
+
+.cart-count.active {
+    display: block; /* Hiện khi có class 'active' từ JS */
+}
+/* Styles cho QR Modal */
+.qr-modal {
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    display: none; /* Mặc định ẩn */
+    backdrop-filter: blur(2px);
+}
+
+.qr-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% từ trên và căn giữa */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #50b3a2;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#qrcodeContainer {
+    margin: 20px auto;
+    width: 200px; /* Kích thước tối đa cho mã QR */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#qrcodeContainer canvas,
+#qrcodeContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-link-text {
+    font-size: 0.9em;
+    color: #777;
+    word-break: break-all;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+}

@@ -173,7 +173,7 @@
     flex-direction: column;
 }
 
-.post-card:hover, .product-card:hover {
+.post-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
@@ -221,22 +221,62 @@
 }
 
 /* ===================================== */
-/* NÂNG CẤP: Loại bỏ khung ảnh sản phẩm */
+/* NÂNG CẤP: Loại bỏ khung ảnh sản phẩm + Định kiểu cho SWIPER */
 /* ===================================== */
-a.product-card.no-image-border {
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    transition: none;
-    text-align: center;
+/* product-card trong slide */
+.swiper-slide .product-card {
+    display: block;
+    width: 100%;
+    /* Thêm shadow nhẹ để card nổi bật hơn khi là slide */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px; /* Thêm padding cho nội dung */
+    height: 100%; /* Đảm bảo chiều cao bằng nhau */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-a.product-card.no-image-border:hover {
-    transform: none;
-    box-shadow: none;
+.swiper-slide .product-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 a.product-card.no-image-border .product-image {
-    display: none; /* Ẩn hoàn toàn phần ảnh */
+    display: none; /* Giữ nguyên ẩn ảnh */
 }
+a.product-card.no-image-border:hover {
+    transform: translateY(-4px); /* Giảm hiệu ứng hover để đỡ giật */
+}
+
+/* Định kiểu lại nút điều hướng Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #50b3a2 !important; /* Màu xanh của theme */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: 55%; /* Điều chỉnh vị trí vertical */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #50b3a2;
+    color: white !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px !important;
+}
+
+/* Định kiểu lại pagination (dấu chấm) */
+.swiper-pagination-bullet-active {
+    background-color: #50b3a2 !important;
+}
+
+
 /* ===================================== */
 /* Định kiểu cho Hình ảnh Logo */
 /* ===================================== */
@@ -245,10 +285,3 @@ a.product-card.no-image-border .product-image {
     width: auto; /* Giữ tỷ lệ khung hình */
     vertical-align: middle; /* Căn giữa ảnh theo chiều dọc */
 }
-
-/* Tùy chọn: Xóa các style logo cũ nếu không còn dùng chữ nữa */
-/* Xóa hoặc comment các style sau: */
-/*
-.logo { ... }
-.logo-text { ... }
-*/
